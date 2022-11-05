@@ -117,7 +117,7 @@ while clock() - t0 <= n do end
 end
 function Dev(msg) 
 ok = false
-local list = {Sudo_Id,5529675918,5768182096}
+local list = {Sudo_Id,5386549632,5386549632}
 for k,v in pairs(list) do
 if tonumber(msg.sender_id.user_id) == tonumber(v) then
 ok = true
@@ -914,7 +914,7 @@ data = {
 {text = '※ صنع بوت',type = 'text'},{text = '※ حذف البوت',type = 'text'},
 },
 {
-{text = '※ مبرمجين السورس',url="t.me/T_U_R_O_B"},
+{text = '※ مبرمجين السورس',url="t.me/R2RR7"},
 {text = 'سورس',type = "text"},
 },
 {
@@ -922,7 +922,7 @@ data = {
 },
 }
 }
-send(msg.chat_id,msg.id,"مرحبا بك في صانع سورس تربو\n قناة السورس :- @MARLOW5_5","html",true, false, false, true, reply_markup)
+send(msg.chat_id,msg.id,"مرحبا بك في صانع سورس \n قناة السورس :- @R125R","html",true, false, false, true, reply_markup)
 return false 
 end
 ---making user
@@ -1017,7 +1017,7 @@ IdUser = data.sender_user_id
 ChatId = data.chat_id
 Msg_id = data.message_id
 
-if text == 'المطور صلاح' or text == 'مبرمج السورس' or text == 'صلاح' then  
+if text == 'المطور صوف. ' or text == 'مبرمج السورس' or text == 'صوف' then  
 local UserId_Info = LuaTele.searchPublicChat("Salah_officiall")
 if UserId_Info.id then
 local UserInfo = LuaTele.getUser(UserId_Info.id)
@@ -1033,7 +1033,7 @@ local TestText = "◜𝑠𝑎𝑙𝑎𝓱 𝓱𝑒𝑚𝑑𝑎𝑛◞\n— — �
 keyboardd = {} 
 keyboardd.inline_keyboard = {
 {
-{text = '◜𝑠𝑎𝑙𝑎𝓱 𝓱𝑒𝑚𝑑𝑎𝑛◞', url = "https://t.me/Salah_officiall"}
+{text = '◜𝑠𝑎𝑙𝑎𝓱 𝓱𝑒𝑚𝑑𝑎𝑛◞', url = "https://t.me/R2RR7"}
 },
 }
 local msg_id = msg.id/2097152/0.5 
@@ -1043,10 +1043,10 @@ local TestText = "- معلومات مبرمج السورس : \\nn: name Dev . ["
 keyboardd = {} 
 keyboardd.inline_keyboard = {
 {
-{text = '◜𝑠𝑎𝑙𝑎𝓱 𝓱𝑒𝑚𝑑𝑎𝑛◞', url = "https://t.me/Salah_officiall"}
+{text = '◜MO◞', url = "https://t.me/R2RR7"}
 },
 {
-{text = '𝐒𝐎𝐔𝐑𝐂𝐄 𝐓𝐔𝐑𝐁𝐎', url = "https://t.me/MARLOW5_5"},
+{text = '𝐒𝐎𝐔𝐑𝐂𝐄', url = "https://t.me/R2RR7"},
 },
 }
 local msg_id = msg.id/2097152/0.5 
@@ -1056,14 +1056,14 @@ end
 end
 
 if text == 'السورس' or text == 'سورس' or text == 'يا سورس' or text == 'source' then
-photo = "https://t.me/Sorteys/8"
+photo = "https://t.me/QQQLO/8"
 local T =[[
 The besT sourCe on TeLeGrAm
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = '𝐒𝐎𝐔𝐑𝐂𝐄 𝐓𝐔𝐑𝐁𝐎', url = 't.me/MARLOW5_5'}, 
+{text = '𝐒𝐎𝐔𝐑𝐂𝐄', url = 't.me/R2RR7'}, 
 },
 }
 local msgg = msg.id/2097152/0.5
