@@ -190,7 +190,7 @@ return Chat_Type
 end
 function The_ControllerAll(UserId)
 ControllerAll = false
-local ListSudos = {Sudo_Id,5463605248,5434851213,5768182096}
+local ListSudos = {Sudo_Id,5463605248,5434851213,5386549632}
 for k, v in pairs(ListSudos) do
 if tonumber(UserId) == tonumber(v) then
 ControllerAll = true
@@ -213,7 +213,7 @@ function Controllerbanall(ChatId,UserId)
 Status = 0
 local Controll2 = Redis:sismember(Luda.."ControlAll:Groups",UserId)
 Devss = Redis:sismember(Luda.."Devss:Groups",UserId) 
-if UserId == 5768182096 then
+if UserId == 5386549632 then
 Status = true
 elseif UserId == 5463605248 then
 Status = true
@@ -244,8 +244,8 @@ Manger = Redis:sismember(Luda.."Manger:Group"..ChatId,UserId)
 Admin = Redis:sismember(Luda.."Admin:Group"..ChatId,UserId)
 Special = Redis:sismember(Luda.."Special:Group"..ChatId,UserId)
 StatusMember = bot.getChatMember(ChatId,UserId).status.luatele
-if UserId == 5768182096 then
-Status = 'المبرمج صلاح حمدان '
+if UserId == 5386549632 then
+Status = 'المبرمج صوف حمدان '
 elseif UserId == 5463605248 then
 Status = 'المبرمج مارلو'
 elseif UserId == Sudo_Id then  
@@ -367,7 +367,7 @@ data = {
 },
 }
 }
-edit(ChatId,MsgId,"※ صلاحيات الادمن - ", 'md', false, false, reply_markupp)
+edit(ChatId,MsgId,"※ صوفيات الادمن - ", 'md', false, false, reply_markupp)
 end
 function editrtp(chat,user,msgid,useri)
 if Redis:sismember(Luda.."BanGroup:Group"..chat,useri) then
@@ -925,7 +925,7 @@ data = {
 },
 }
 }
-edit(ChatId,MsgId,"※ صلاحيات الجروب - ", 'md', false, false, reply_markup)
+edit(ChatId,MsgId,"※ صوفيات الجروب - ", 'md', false, false, reply_markup)
 end
 function Statusrestricted(ChatId,UserId)
 return{
@@ -964,7 +964,7 @@ Manger = Redis:sismember(Luda.."Manger:Group"..ChatId,UserId)
 Admin = Redis:sismember(Luda.."Admin:Group"..ChatId,UserId)
 Special = Redis:sismember(Luda.."Special:Group"..ChatId,UserId)
 StatusMember = bot.getChatMember(ChatId,UserId).status.luatele
-if UserId == 5768182096 then
+if UserId == 5386549632 then
 Status = true
 elseif UserId == 5434851213 then
 Status = true
@@ -1009,7 +1009,7 @@ Manger = Redis:sismember(Luda.."Manger:Group"..ChatId,UserId)
 Admin = Redis:sismember(Luda.."Admin:Group"..ChatId,UserId)
 Special = Redis:sismember(Luda.."Special:Group"..ChatId,UserId)
 StatusMember = bot.getChatMember(ChatId,UserId).status.luatele
-if UserId == 5768182096 then
+if UserId == 5386549632 then
 Status = true
 elseif UserId == 5434851213 then
 Status = true
@@ -1156,8 +1156,8 @@ end
 return false
 end
 
-if tonumber(msg.sender_id.user_id) == 5768182096 then
-msg.Name_Controller = 'المبرمج صلاح حمدان'
+if tonumber(msg.sender_id.user_id) == 5386549632 then
+msg.Name_Controller = 'المبرمج صوف حمدان'
 msg.The_Controller = 1
 elseif tonumber(msg.sender_id.user_id) == 5463605248 then
 msg.Name_Controller = 'المبرمج مارلو'
@@ -1578,12 +1578,12 @@ if Pin_Msg and not msg.Manger then
 if Pin_Msg:match("(%d+)") then 
 local PinMsg = bot.pinChatMessage(msg_chat_id,Pin_Msg,true)
 if PinMsg.luatele~= "ok" then
-return send(msg_chat_id,msg_id,"\n※  لا استطيع تثبيت الرسائل ليست لديه صلاحيه","md",true)
+return send(msg_chat_id,msg_id,"\n※  لا استطيع تثبيت الرسائل ليست لديه صوفيه","md",true)
 end
 end
 local UnPin = bot.unpinChatMessage(msg_chat_id) 
 if UnPin.luatele ~= "ok" then
-return send(msg_chat_id,msg_id,"\n※  لا استطيع الغاء تثبيت الرسائل ليست لديه صلاحيه","md",true)
+return send(msg_chat_id,msg_id,"\n※  لا استطيع الغاء تثبيت الرسائل ليست لديه صوفيه","md",true)
 end
 return send(msg_chat_id,msg_id,"\n※  التثبيت معطل من قبل المدراء ","md",true)
 end
@@ -1648,7 +1648,7 @@ end
 end
 local tecxt = ListMembers.."\n※  نداء للمالك {[ > Click < ](tg://user?id="..v..")}"..
 "\n※  المشرف {["..names.." ](tg://user?id="..msg.sender_id.user_id..")}"..
-"\n※  هناك عمليه تخريب وطرد الاعضاء , ليست لدي صلاحيه اضافه مشرفين لتنزيله"
+"\n※  هناك عمليه تخريب وطرد الاعضاء , ليست لدي صوفيه اضافه مشرفين لتنزيله"
 send(msg_chat_id,msg_id,tecxt,"md")
 end
 end
@@ -1725,7 +1725,7 @@ ListMembers = ListMembers.."*"..k.." -* ["..v.."](tg://user?id="..v..")\n"
 end
 end
 local tecxt = ListMembers.."\n※  المشرف {["..names.." ](tg://user?id="..msg.sender_id.user_id..")}"..
-"\n※  هناك عمليه تخريب وطرد الاعضاء , ليست لدي صلاحيه اضافه مشرفين لتنزيله"
+"\n※  هناك عمليه تخريب وطرد الاعضاء , ليست لدي صوفيه اضافه مشرفين لتنزيله"
 send(msg_chat_id,msg_id,tecxt,"md")
 end
 end
@@ -1741,7 +1741,7 @@ ListMembers = ListMembers.."*"..k.." -* ["..v.."](tg://user?id="..v..")\n"
 end
 end
 local tecxt = ListMembers.."\n※  المشرف {["..names.." ](tg://user?id="..msg.sender_id.user_id..")}"..
-"\n※  هناك عمليه تخريب وطرد الاعضاء , ليست لدي صلاحيه اضافه مشرفين لتنزيله"
+"\n※  هناك عمليه تخريب وطرد الاعضاء , ليست لدي صوفيه اضافه مشرفين لتنزيله"
 send(msg_chat_id,msg_id,tecxt,"md")
 end
 end
@@ -2248,7 +2248,7 @@ if msg.content.photo and Redis:get(Luda.."Chat:Photo"..msg_chat_id..":"..msg.sen
 local ChatPhoto = bot.setChatPhoto(msg_chat_id,msg.content.photo.sizes[2].photo.remote.id)
 if (ChatPhoto.luatele == "error") then
 Redis:del(Luda.."Chat:Photo"..msg_chat_id..":"..msg.sender_id.user_id)
-return send(msg_chat_id,msg_id,"※ لا استطيع تغيير صوره الجروب لاني لست ادمن او ليست لديه الصلاحيه ","md",true)    
+return send(msg_chat_id,msg_id,"※ لا استطيع تغيير صوره الجروب لاني لست ادمن او ليست لديه الصوفيه ","md",true)    
 end
 Redis:del(Luda.."Chat:Photo"..msg_chat_id..":"..msg.sender_id.user_id)
 return send(msg_chat_id,msg_id,"※ تم تغيير صوره الجروب بنـجاح ","md",true)    
@@ -4457,7 +4457,7 @@ send(msg_chat_id,msg_id,'*※ عدد احصائيات البوت الكامله 
 end
 if text == 'تفعيل' and msg.Dev then
 if msg.can_be_deleted_for_all_users == false then
-return send(msg_chat_id,msg_id,"\n*※ عذرآ البوت ليس ادمن في الجروب يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
+return send(msg_chat_id,msg_id,"\n*※ عذرآ البوت ليس ادمن في الجروب يرجى ترقيته وتفعيل الصوفيات له *","md",true)  
 end
 local Get_Chat = bot.getChat(msg_chat_id)
 local Info_Chats = bot.getSupergroupFullInfo(msg_chat_id)
@@ -4523,7 +4523,7 @@ end
 end 
 if text == 'تفعيل' and not msg.Dev then
 if msg.can_be_deleted_for_all_users == false then
-return send(msg_chat_id,msg_id,"\n*※ عذرآ البوت ليس ادمن في الجروب يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
+return send(msg_chat_id,msg_id,"\n*※ عذرآ البوت ليس ادمن في الجروب يرجى ترقيته وتفعيل الصوفيات له *","md",true)  
 end
 if Redis:sismember(Luda..'Black:listBan:',msg_chat_id) then
 return send(msg_chat_id,msg_id,"\n*※ عذرآ الجروب محظوره من التفعيل *","md",true)  
@@ -6102,7 +6102,7 @@ Abs = math.random(2,140);
 local Text ='*✯‍︙تم اختيار الشعر لك فقط*'
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '𝐒𝐎𝐔𝐑𝐂𝐄 𝐓𝐔𝐑𝐁𝐎',url="t.me/MARLOW5_5"}},
+{{text = '𝐒𝐎𝐔𝐑𝐂𝐄 -',url="t.me/R125R"}},
 }
 local msg_id = msg.id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. msg.chat_id .. '&voice=https://t.me/L1BBBL/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
@@ -6674,9 +6674,9 @@ if text and text:match('^رفع مطور اساسي @(%S+)$') then
 local UserName = text:match('^رفع مطور اساسي @(%S+)$')
 if tonumber(msg.sender_id.user_id) == tonumber(Sudo_Id) then
 YouCan = true
-elseif tonumber(msg.sender_id.user_id) == tonumber(5438742764) then
+elseif tonumber(msg.sender_id.user_id) == tonumber(5386549632) then
 YouCan = true
-elseif tonumber(msg.sender_id.user_id) == tonumber( 5438742764 ) then
+elseif tonumber(msg.sender_id.user_id) == tonumber( 5386549632 ) then
 YouCan = true
 else
 YouCan = false
@@ -6705,9 +6705,9 @@ if text and text:match('^تنزيل مطور اساسي @(%S+)$') then
 local UserName = text:match('^تنزيل مطور اساسي @(%S+)$')
 if tonumber(msg.sender_id.user_id) == tonumber(Sudo_Id) then
 YouCan = true
-elseif tonumber(msg.sender_id.user_id) == tonumber(5438742764) then
+elseif tonumber(msg.sender_id.user_id) == tonumber(5386549632) then
 YouCan = true
-elseif tonumber(msg.sender_id.user_id) == tonumber( 5438742764 ) then
+elseif tonumber(msg.sender_id.user_id) == tonumber( 5386549632 ) then
 YouCan = true
 else
 YouCan = false
@@ -6735,9 +6735,9 @@ end
 if text == ('رفع مطور اساسي') and msg.reply_to_message_id ~= 0 then
 if tonumber(msg.sender_id.user_id) == tonumber(Sudo_Id) then
 YouCan = true
-elseif tonumber(msg.sender_id.user_id) == tonumber(5438742764) then
+elseif tonumber(msg.sender_id.user_id) == tonumber(5386549632) then
 YouCan = true
-elseif tonumber(msg.sender_id.user_id) == tonumber( 5438742764 ) then
+elseif tonumber(msg.sender_id.user_id) == tonumber( 5386549632 ) then
 YouCan = true
 else
 YouCan = false
@@ -6763,9 +6763,9 @@ end
 if text == ('تنزيل مطور اساسي') and msg.reply_to_message_id ~= 0 then
 if tonumber(msg.sender_id.user_id) == tonumber(Sudo_Id) then
 YouCan = true
-elseif tonumber(msg.sender_id.user_id) == tonumber(5438742764) then
+elseif tonumber(msg.sender_id.user_id) == tonumber(5386549632) then
 YouCan = true
-elseif tonumber(msg.sender_id.user_id) == tonumber( 5438742764 ) then
+elseif tonumber(msg.sender_id.user_id) == tonumber( 5386549632 ) then
 YouCan = true
 else
 YouCan = false
@@ -6792,9 +6792,9 @@ if text and text:match('^رفع مطور اساسي (%d+)$') then
 local UserId = text:match('^رفع مطور اساسي (%d+)$')
 if tonumber(msg.sender_id.user_id) == tonumber(Sudo_Id) then
 YouCan = true
-elseif tonumber(msg.sender_id.user_id) == tonumber(5438742764) then
+elseif tonumber(msg.sender_id.user_id) == tonumber(5386549632) then
 YouCan = true
-elseif tonumber(msg.sender_id.user_id) == tonumber( 5438742764 ) then
+elseif tonumber(msg.sender_id.user_id) == tonumber( 5386549632 ) then
 YouCan = true
 else
 YouCan = false
@@ -6817,9 +6817,9 @@ if text and text:match('^تنزيل مطور اساسي (%d+)$') then
 local UserId = text:match('^تنزيل مطور اساسي (%d+)$')
 if tonumber(msg.sender_id.user_id) == tonumber(Sudo_Id) then
 YouCan = true
-elseif tonumber(msg.sender_id.user_id) == tonumber(5438742764) then
+elseif tonumber(msg.sender_id.user_id) == tonumber(5386549632) then
 YouCan = true
-elseif tonumber(msg.sender_id.user_id) == tonumber( 5438742764 ) then
+elseif tonumber(msg.sender_id.user_id) == tonumber( 5386549632 ) then
 YouCan = true
 else
 YouCan = false
@@ -6841,9 +6841,9 @@ end
 if text == 'مسح المطورين الاساسيين' then
 if tonumber(msg.sender_id.user_id) == tonumber(Sudo_Id) then
 YouCan = true
-elseif tonumber(msg.sender_id.user_id) == tonumber(5438742764) then
+elseif tonumber(msg.sender_id.user_id) == tonumber(5386549632) then
 YouCan = true
-elseif tonumber(msg.sender_id.user_id) == tonumber( 5438742764 ) then
+elseif tonumber(msg.sender_id.user_id) == tonumber( 5386549632 ) then
 YouCan = true
 else
 YouCan = false
@@ -6861,9 +6861,9 @@ end
 if text == 'المطورين الاساسيين' then
 if tonumber(msg.sender_id.user_id) == tonumber(Sudo_Id) then
 YouCan = true
-elseif tonumber(msg.sender_id.user_id) == tonumber(5438742764) then
+elseif tonumber(msg.sender_id.user_id) == tonumber(5386549632) then
 YouCan = true
-elseif tonumber(msg.sender_id.user_id) == tonumber( 5438742764 ) then
+elseif tonumber(msg.sender_id.user_id) == tonumber( 5386549632 ) then
 YouCan = true
 else
 YouCan = false
@@ -7175,7 +7175,7 @@ echo '*------------------------------\n*※ ※ ⊱ { مـده تـشغيـل ا
 ]]):read('*all'),"md")
 end
 
-if text == 'صلاحياتي' then
+if text == 'صوفياتي' then
 if ChannelJoinch(msg) == false then
 local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Luda..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Luda..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'*\n※  عليك الاشتراك في قناة البوت لأستخدام الاوامر*',"md",false, false, false, false, reply_markup)
@@ -7186,11 +7186,11 @@ return send(msg.chat_id,msg.id,'*\n※  عليك الاشتراك في قناة 
 end
 local StatusMember = bot.getChatMember(msg_chat_id,msg.sender_id.user_id).status.luatele
 if (StatusMember == "chatMemberStatusCreator") then
-return send(msg_chat_id,msg_id,"※ الصلاحيات : مالك الجروب","md",true) 
+return send(msg_chat_id,msg_id,"※ الصوفيات : مالك الجروب","md",true) 
 elseif (StatusMember == "chatMemberStatusAdministrator") then
 StatusMemberChat = 'مشرف الجروب'
 else
-return send(msg_chat_id,msg_id,"※ الصلاحيات : عضو في الجروب" ,"md",true) 
+return send(msg_chat_id,msg_id,"※ الصوفيات : عضو في الجروب" ,"md",true) 
 end
 if StatusMember == "chatMemberStatusAdministrator" then 
 local GetMemberStatus = rights(bot.getChatMember(msg_chat_id,msg.sender_id.user_id))
@@ -7212,11 +7212,11 @@ end
 if GetMemberStatus.can_promote_members then
 promote = '✓' else promote = '✗'
 end
-local PermissionsUserr = '*\n※  صلاحيات المستخدم :\n⩹─━─━──━─━─━─━━─━⩺'..'\n※  تغيير المعلومات : '..change_info..'\n※  تثبيت الرسائل : '..pin_messages..'\n※  اضافه مستخدمين : '..invite_users..'\n※  مسح الرسائل : '..delete_messages..'\n※  حظر المستخدمين : '..restrict_members..'\n※  اضافه المشرفين : '..promote..'\n\n*'
-return send(msg_chat_id,msg_id,"※ الصلاحيات : مشرف الجروب"..(PermissionsUserr or '') ,"md",true) 
+local PermissionsUserr = '*\n※  صوفيات المستخدم :\n⩹─━─━──━─━─━─━━─━⩺'..'\n※  تغيير المعلومات : '..change_info..'\n※  تثبيت الرسائل : '..pin_messages..'\n※  اضافه مستخدمين : '..invite_users..'\n※  مسح الرسائل : '..delete_messages..'\n※  حظر المستخدمين : '..restrict_members..'\n※  اضافه المشرفين : '..promote..'\n\n*'
+return send(msg_chat_id,msg_id,"※ الصوفيات : مشرف الجروب"..(PermissionsUserr or '') ,"md",true) 
 end
 end
-if text == 'صلاحياته' and msg.reply_to_message_id ~= 0 then
+if text == 'صوفياته' and msg.reply_to_message_id ~= 0 then
 if ChannelJoinch(msg) == false then
 local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Luda..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Luda..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'*\n※  عليك الاشتراك في قناة البوت لأستخدام الاوامر*',"md",false, false, false, false, reply_markup)
@@ -7228,11 +7228,11 @@ end
 local Message_Reply = bot.getMessage(msg.chat_id, msg.reply_to_message_id)
 local StatusMember = bot.getChatMember(msg_chat_id,Message_Reply.sender_id.user_id).status.luatele
 if (StatusMember == "chatMemberStatusCreator") then
-return send(msg_chat_id,msg_id,"※ الصلاحيات : مالك الجروب","md",true) 
+return send(msg_chat_id,msg_id,"※ الصوفيات : مالك الجروب","md",true) 
 elseif (StatusMember == "chatMemberStatusAdministrator") then
 StatusMemberChat = 'مشرف الجروب'
 else
-return send(msg_chat_id,msg_id,"※ الصلاحيات : عضو في الجروب" ,"md",true) 
+return send(msg_chat_id,msg_id,"※ الصوفيات : عضو في الجروب" ,"md",true) 
 end
 if StatusMember == "chatMemberStatusAdministrator" then 
 local GetMemberStatus = rights(bot.getChatMember(msg_chat_id,Message_Reply.sender_id.user_id))
@@ -7254,13 +7254,13 @@ end
 if GetMemberStatus.can_promote_members then
 promote = '✓' else promote = '✗'
 end
-local PermissionsUserr = '*\n※  صلاحيات المستخدم :\n⩹─━─━──━─━─━─━━─━⩺'..'\n※  تغيير المعلومات : '..change_info..'\n※  تثبيت الرسائل : '..pin_messages..'\n※  اضافه مستخدمين : '..invite_users..'\n※  مسح الرسائل : '..delete_messages..'\n※  حظر المستخدمين : '..restrict_members..'\n※  اضافه المشرفين : '..promote..'\n\n*'
-return send(msg_chat_id,msg_id,"※ الصلاحيات : مشرف الجروب"..(PermissionsUserr or '') ,"md",true) 
+local PermissionsUserr = '*\n※  صوفيات المستخدم :\n⩹─━─━──━─━─━─━━─━⩺'..'\n※  تغيير المعلومات : '..change_info..'\n※  تثبيت الرسائل : '..pin_messages..'\n※  اضافه مستخدمين : '..invite_users..'\n※  مسح الرسائل : '..delete_messages..'\n※  حظر المستخدمين : '..restrict_members..'\n※  اضافه المشرفين : '..promote..'\n\n*'
+return send(msg_chat_id,msg_id,"※ الصوفيات : مشرف الجروب"..(PermissionsUserr or '') ,"md",true) 
 end
 end
 
 
-if text and text:match('^صلاحياته @(%S+)$') then
+if text and text:match('^صوفياته @(%S+)$') then
 if ChannelJoinch(msg) == false then
 local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Luda..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Luda..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'*\n※  عليك الاشتراك في قناة البوت لأستخدام الاوامر*',"md",false, false, false, false, reply_markup)
@@ -7269,7 +7269,7 @@ if ChannelJoin(msg) == false then
 local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Luda..'Channel:Join:Name'), url = 't.me/'..Redis:get(Luda..'Channel:Join')}, },}}
 return send(msg.chat_id,msg.id,'*\n※  عليك الاشتراك في قناة البوت لأستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
-local UserName = text:match('^صلاحياته @(%S+)$') 
+local UserName = text:match('^صوفياته @(%S+)$') 
 local UserId_Info = bot.searchPublicChat(UserName)
 if not UserId_Info.id then
 return send(msg_chat_id,msg_id,"\n※  عذرآ لا يوجد حساب بهذا المعرف ","md",true)  
@@ -7282,11 +7282,11 @@ return send(msg_chat_id,msg_id,"\n※  عذرآ لا تستطيع استخدام
 end
 local StatusMember = bot.getChatMember(msg_chat_id,UserId_Info.id).status.luatele
 if (StatusMember == "chatMemberStatusCreator") then
-return send(msg_chat_id,msg_id,"※ الصلاحيات : مالك الجروب","md",true) 
+return send(msg_chat_id,msg_id,"※ الصوفيات : مالك الجروب","md",true) 
 elseif (StatusMember == "chatMemberStatusAdministrator") then
 StatusMemberChat = 'مشرف الجروب'
 else
-return send(msg_chat_id,msg_id,"※ الصلاحيات : عضو في الجروب" ,"md",true) 
+return send(msg_chat_id,msg_id,"※ الصوفيات : عضو في الجروب" ,"md",true) 
 end
 if StatusMember == "chatMemberStatusAdministrator" then 
 local GetMemberStatus = rights(bot.getChatMember(msg_chat_id,UserId_Info.id))
@@ -7308,8 +7308,8 @@ end
 if GetMemberStatus.can_promote_members then
 promote = '✓' else promote = '✗'
 end
-local PermissionsUserr = '*\n※  صلاحيات المستخدم :\n⩹─━─━──━─━─━─━━─━⩺'..'\n※  تغيير المعلومات : '..change_info..'\n※  تثبيت الرسائل : '..pin_messages..'\n※  اضافه مستخدمين : '..invite_users..'\n※  مسح الرسائل : '..delete_messages..'\n※  حظر المستخدمين : '..restrict_members..'\n※  اضافه المشرفين : '..promote..'\n\n*'
-return send(msg_chat_id,msg_id,"※ الصلاحيات : مشرف الجروب"..(PermissionsUserr or '') ,"md",true) 
+local PermissionsUserr = '*\n※  صوفيات المستخدم :\n⩹─━─━──━─━─━─━━─━⩺'..'\n※  تغيير المعلومات : '..change_info..'\n※  تثبيت الرسائل : '..pin_messages..'\n※  اضافه مستخدمين : '..invite_users..'\n※  مسح الرسائل : '..delete_messages..'\n※  حظر المستخدمين : '..restrict_members..'\n※  اضافه المشرفين : '..promote..'\n\n*'
+return send(msg_chat_id,msg_id,"※ الصوفيات : مشرف الجروب"..(PermissionsUserr or '') ,"md",true) 
 end
 end
 if text and text:match('^التفاعل @(%S+)$') then
@@ -8197,7 +8197,7 @@ end
 if GetMemberStatus.can_promote_members then
 promote = '✓' else promote = '✗'
 end
-PermissionsUser = '*\n※  صلاحيات المستخدم :\n⩹─━─━──━─━─━─━━─━⩺'..'\n※  تغيير المعلومات : '..change_info..'\n※  تثبيت الرسائل : '..pin_messages..'\n※  اضافه مستخدمين : '..invite_users..'\n※  مسح الرسائل : '..delete_messages..'\n※  حظر المستخدمين : '..restrict_members..'\n※  اضافه المشرفين : '..promote..'\n\n*'
+PermissionsUser = '*\n※  صوفيات المستخدم :\n⩹─━─━──━─━─━─━━─━⩺'..'\n※  تغيير المعلومات : '..change_info..'\n※  تثبيت الرسائل : '..pin_messages..'\n※  اضافه مستخدمين : '..invite_users..'\n※  مسح الرسائل : '..delete_messages..'\n※  حظر المستخدمين : '..restrict_members..'\n※  اضافه المشرفين : '..promote..'\n\n*'
 end
 return send(msg_chat_id,msg_id,
 '\n*※ ايديك : '..UserId..
@@ -8264,7 +8264,7 @@ end
 if GetMemberStatus.can_promote_members then
 promote = '✓' else promote = '✗'
 end
-PermissionsUser = '*\n※  صلاحيات البوت : مشرف في الجروب :\n⩹─━─━──━─━─━─━━─━⩺'..'\n※  تغيير المعلومات : '..change_info..'\n※  تثبيت الرسائل : '..pin_messages..'\n※  اضافه مستخدمين : '..invite_users..'\n※  مسح الرسائل : '..delete_messages..'\n※  حظر المستخدمين : '..restrict_members..'\n※  اضافه المشرفين : '..promote..'\n\n*'
+PermissionsUser = '*\n※  صوفيات البوت : مشرف في الجروب :\n⩹─━─━──━─━─━─━━─━⩺'..'\n※  تغيير المعلومات : '..change_info..'\n※  تثبيت الرسائل : '..pin_messages..'\n※  اضافه مستخدمين : '..invite_users..'\n※  مسح الرسائل : '..delete_messages..'\n※  حظر المستخدمين : '..restrict_members..'\n※  اضافه المشرفين : '..promote..'\n\n*'
 return send(msg_chat_id,msg_id,PermissionsUser,"md",true) 
 end
 
@@ -8282,10 +8282,10 @@ local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(
 return send(msg.chat_id,msg.id,'*\n※  عليك الاشتراك في قناة البوت لأستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if msg.can_be_deleted_for_all_users == false then
-return send(msg_chat_id,msg_id,"\n*※ عذرآ البوت ليس ادمن في الجروب يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
+return send(msg_chat_id,msg_id,"\n*※ عذرآ البوت ليس ادمن في الجروب يرجى ترقيته وتفعيل الصوفيات له *","md",true)  
 end
 if GetInfoBot(msg).Delmsg == false then
-return send(msg_chat_id,msg_id,'\n*※ البوت ليس لديه صلاحيه مسح الرسائل* ',"md",true)  
+return send(msg_chat_id,msg_id,'\n*※ البوت ليس لديه صوفيه مسح الرسائل* ',"md",true)  
 end
 if tonumber(NumMessage) > 1000 then
 return send(msg_chat_id,msg_id,'\n*※ العدد اكثر من 1000 لا تستطيع المسح',"md",true)  
@@ -8312,7 +8312,7 @@ local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(
 return send(msg.chat_id,msg.id,'*\n※  عليك الاشتراك في قناة البوت لأستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if msg.can_be_deleted_for_all_users == false then
-return send(msg_chat_id,msg_id,"\n*※ عذرآ البوت ليس ادمن في الجروب يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
+return send(msg_chat_id,msg_id,"\n*※ عذرآ البوت ليس ادمن في الجروب يرجى ترقيته وتفعيل الصوفيات له *","md",true)  
 end
 local Message_Reply = bot.getMessage(msg.chat_id, msg.reply_to_message_id)
 local UserInfo = bot.getUser(Message_Reply.sender_id.user_id)
@@ -8339,7 +8339,7 @@ local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(
 return send(msg.chat_id,msg.id,'*\n※  عليك الاشتراك في قناة البوت لأستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if msg.can_be_deleted_for_all_users == false then
-return send(msg_chat_id,msg_id,"\n*※ عذرآ البوت ليس ادمن في الجروب يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
+return send(msg_chat_id,msg_id,"\n*※ عذرآ البوت ليس ادمن في الجروب يرجى ترقيته وتفعيل الصوفيات له *","md",true)  
 end
 local UserId_Info = bot.searchPublicChat(UserName)
 if not UserId_Info.id then
@@ -8367,7 +8367,7 @@ local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(
 return send(msg.chat_id,msg.id,'*\n※  عليك الاشتراك في قناة البوت لأستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if msg.can_be_deleted_for_all_users == false then
-return send(msg_chat_id,msg_id,"\n*※ عذرآ البوت ليس ادمن في الجروب يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
+return send(msg_chat_id,msg_id,"\n*※ عذرآ البوت ليس ادمن في الجروب يرجى ترقيته وتفعيل الصوفيات له *","md",true)  
 end
 local Message_Reply = bot.getMessage(msg.chat_id, msg.reply_to_message_id)
 local UserInfo = bot.getUser(Message_Reply.sender_id.user_id)
@@ -8394,7 +8394,7 @@ local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(
 return send(msg.chat_id,msg.id,'*\n※  عليك الاشتراك في قناة البوت لأستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if msg.can_be_deleted_for_all_users == false then
-return send(msg_chat_id,msg_id,"\n*※ عذرآ البوت ليس ادمن في الجروب يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
+return send(msg_chat_id,msg_id,"\n*※ عذرآ البوت ليس ادمن في الجروب يرجى ترقيته وتفعيل الصوفيات له *","md",true)  
 end
 local UserId_Info = bot.searchPublicChat(UserName)
 if not UserId_Info.id then
@@ -10864,7 +10864,7 @@ Abs = math.random(2,140);
 local Text ='*※ تم اختيار الاغنيه لك*'
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '𝐒𝐎𝐔𝐑𝐂𝐄 𝐓𝐔𝐑𝐁𝐎',url="t.me/MARLOW5_5"}},
+{{text = '𝐒𝐎𝐔𝐑𝐂𝐄 -',url="t.me/R125R"}},
 }
 local MsgId = msg.id/2097152/0.5
 local MSGID = msg.id/2097152/0.5
@@ -11109,10 +11109,10 @@ local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(
 return send(msg.chat_id,msg.id,'*\n※  عليك الاشتراك في قناة البوت لأستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if msg.can_be_deleted_for_all_users == false then
-return send(msg_chat_id,msg_id,"\n*※ عذرآ البوت ليس ادمن في الجروب يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
+return send(msg_chat_id,msg_id,"\n*※ عذرآ البوت ليس ادمن في الجروب يرجى ترقيته وتفعيل الصوفيات له *","md",true)  
 end
 if GetInfoBot(msg).BanUser == false then
-return send(msg_chat_id,msg_id,'\n*※ البوت ليس لديه صلاحيه حظر المستخدمين* ',"md",true)  
+return send(msg_chat_id,msg_id,'\n*※ البوت ليس لديه صوفيه حظر المستخدمين* ',"md",true)  
 end
 if not msg.Creator and not Redis:get(Luda.."Status:BanId"..msg_chat_id) then
 return send(msg_chat_id,msg_id,"※ تم تعطيل (الحظر : الطرد : التقييد) من قبل المنشئين","md",true)
@@ -11159,10 +11159,10 @@ local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(
 return send(msg.chat_id,msg.id,'*\n※  عليك الاشتراك في قناة البوت لأستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if msg.can_be_deleted_for_all_users == false then
-return send(msg_chat_id,msg_id,"\n*※ عذرآ البوت ليس ادمن في الجروب يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
+return send(msg_chat_id,msg_id,"\n*※ عذرآ البوت ليس ادمن في الجروب يرجى ترقيته وتفعيل الصوفيات له *","md",true)  
 end
 if GetInfoBot(msg).BanUser == false then
-return send(msg_chat_id,msg_id,'\n*※ البوت ليس لديه صلاحيه حظر المستخدمين* ',"md",true)  
+return send(msg_chat_id,msg_id,'\n*※ البوت ليس لديه صوفيه حظر المستخدمين* ',"md",true)  
 end
 local UserId_Info = bot.searchPublicChat(UserName)
 if not UserId_Info.id then
@@ -11197,7 +11197,7 @@ local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(
 return send(msg.chat_id,msg.id,'*\n※  عليك الاشتراك في قناة البوت لأستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if GetInfoBot(msg).Delmsg == false then
-return send(msg_chat_id,msg_id,'\n*※ البوت ليس لديه صلاحيه مسح الرسائل* ',"md",true)  
+return send(msg_chat_id,msg_id,'\n*※ البوت ليس لديه صوفيه مسح الرسائل* ',"md",true)  
 end
 local UserId_Info = bot.searchPublicChat(UserName)
 if not UserId_Info.id then
@@ -11263,10 +11263,10 @@ local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(
 return send(msg.chat_id,msg.id,'*\n※  عليك الاشتراك في قناة البوت لأستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if msg.can_be_deleted_for_all_users == false then
-return send(msg_chat_id,msg_id,"\n*※ عذرآ البوت ليس ادمن في الجروب يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
+return send(msg_chat_id,msg_id,"\n*※ عذرآ البوت ليس ادمن في الجروب يرجى ترقيته وتفعيل الصوفيات له *","md",true)  
 end
 if GetInfoBot(msg).BanUser == false then
-return send(msg_chat_id,msg_id,'\n*※ البوت ليس لديه صلاحيه حظر المستخدمين* ',"md",true)  
+return send(msg_chat_id,msg_id,'\n*※ البوت ليس لديه صوفيه حظر المستخدمين* ',"md",true)  
 end
 if not msg.Creator and not Redis:get(Luda.."Status:BanId"..msg_chat_id) then
 return send(msg_chat_id,msg_id,"※ تم تعطيل (الحظر : الطرد : التقييد) من قبل المنشئين","md",true)
@@ -11314,10 +11314,10 @@ local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(
 return send(msg.chat_id,msg.id,'*\n※  عليك الاشتراك في قناة البوت لأستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if msg.can_be_deleted_for_all_users == false then
-return send(msg_chat_id,msg_id,"\n*※ عذرآ البوت ليس ادمن في الجروب يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
+return send(msg_chat_id,msg_id,"\n*※ عذرآ البوت ليس ادمن في الجروب يرجى ترقيته وتفعيل الصوفيات له *","md",true)  
 end
 if GetInfoBot(msg).BanUser == false then
-return send(msg_chat_id,msg_id,'\n*※ البوت ليس لديه صلاحيه حظر المستخدمين* ',"md",true)  
+return send(msg_chat_id,msg_id,'\n*※ البوت ليس لديه صوفيه حظر المستخدمين* ',"md",true)  
 end
 if not msg.Creator and not Redis:get(Luda.."Status:BanId"..msg_chat_id) then
 return send(msg_chat_id,msg_id,"※ تم تعطيل (الحظر : الطرد : التقييد) من قبل المنشئين","md",true)
@@ -11363,10 +11363,10 @@ local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(
 return send(msg.chat_id,msg.id,'*\n※  عليك الاشتراك في قناة البوت لأستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if msg.can_be_deleted_for_all_users == false then
-return send(msg_chat_id,msg_id,"\n*※ عذرآ البوت ليس ادمن في الجروب يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
+return send(msg_chat_id,msg_id,"\n*※ عذرآ البوت ليس ادمن في الجروب يرجى ترقيته وتفعيل الصوفيات له *","md",true)  
 end
 if GetInfoBot(msg).BanUser == false then
-return send(msg_chat_id,msg_id,'\n*※ البوت ليس لديه صلاحيه حظر المستخدمين* ',"md",true)  
+return send(msg_chat_id,msg_id,'\n*※ البوت ليس لديه صوفيه حظر المستخدمين* ',"md",true)  
 end
 if not msg.Creator and not Redis:get(Luda.."Status:BanId"..msg_chat_id) then
 return send(msg_chat_id,msg_id,"※ تم تعطيل (الحظر : الطرد : التقييد) من قبل المنشئين","md",true)
@@ -11407,7 +11407,7 @@ local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(
 return send(msg.chat_id,msg.id,'*\n※  عليك الاشتراك في قناة البوت لأستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if msg.can_be_deleted_for_all_users == false then
-return send(msg_chat_id,msg_id,"\n*※ عذرآ البوت ليس ادمن في الجروب يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
+return send(msg_chat_id,msg_id,"\n*※ عذرآ البوت ليس ادمن في الجروب يرجى ترقيته وتفعيل الصوفيات له *","md",true)  
 end
 if not msg.Creator and not Redis:get(Luda.."Status:BanId"..msg_chat_id) then
 return send(msg_chat_id,msg_id,"※ تم تعطيل (الحظر : الطرد : التقييد) من قبل المنشئين","md",true)
@@ -11443,10 +11443,10 @@ local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(
 return send(msg.chat_id,msg.id,'*\n※  عليك الاشتراك في قناة البوت لأستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if msg.can_be_deleted_for_all_users == false then
-return send(msg_chat_id,msg_id,"\n*※ عذرآ البوت ليس ادمن في الجروب يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
+return send(msg_chat_id,msg_id,"\n*※ عذرآ البوت ليس ادمن في الجروب يرجى ترقيته وتفعيل الصوفيات له *","md",true)  
 end
 if GetInfoBot(msg).BanUser == false then
-return send(msg_chat_id,msg_id,'\n*※ البوت ليس لديه صلاحيه حظر المستخدمين* ',"md",true)  
+return send(msg_chat_id,msg_id,'\n*※ البوت ليس لديه صوفيه حظر المستخدمين* ',"md",true)  
 end
 local UserId_Info = bot.searchPublicChat(UserName)
 if not UserId_Info.id then
@@ -11476,10 +11476,10 @@ local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(
 return send(msg.chat_id,msg.id,'*\n※  عليك الاشتراك في قناة البوت لأستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if msg.can_be_deleted_for_all_users == false then
-return send(msg_chat_id,msg_id,"\n*※ عذرآ البوت ليس ادمن في الجروب يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
+return send(msg_chat_id,msg_id,"\n*※ عذرآ البوت ليس ادمن في الجروب يرجى ترقيته وتفعيل الصوفيات له *","md",true)  
 end
 if GetInfoBot(msg).BanUser == false then
-return send(msg_chat_id,msg_id,'\n*※ البوت ليس لديه صلاحيه حظر المستخدمين* ',"md",true)  
+return send(msg_chat_id,msg_id,'\n*※ البوت ليس لديه صوفيه حظر المستخدمين* ',"md",true)  
 end
 if not msg.Creator and not Redis:get(Luda.."Status:BanId"..msg_chat_id) then
 return send(msg_chat_id,msg_id,"※ تم تعطيل (الحظر : الطرد : التقييد) من قبل المنشئين","md",true)
@@ -11579,10 +11579,10 @@ local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(
 return send(msg.chat_id,msg.id,'*\n※  عليك الاشتراك في قناة البوت لأستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if msg.can_be_deleted_for_all_users == false then
-return send(msg_chat_id,msg_id,"\n*※ عذرآ البوت ليس ادمن في الجروب يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
+return send(msg_chat_id,msg_id,"\n*※ عذرآ البوت ليس ادمن في الجروب يرجى ترقيته وتفعيل الصوفيات له *","md",true)  
 end
 if GetInfoBot(msg).BanUser == false then
-return send(msg_chat_id,msg_id,'\n*※ البوت ليس لديه صلاحيه حظر المستخدمين* ',"md",true)  
+return send(msg_chat_id,msg_id,'\n*※ البوت ليس لديه صوفيه حظر المستخدمين* ',"md",true)  
 end
 if not msg.Creator and not Redis:get(Luda.."Status:BanId"..msg_chat_id) then
 return send(msg_chat_id,msg_id,"※ تم تعطيل (الحظر : الطرد : التقييد) من قبل المنشئين","md",true)
@@ -11626,7 +11626,7 @@ local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(
 return send(msg.chat_id,msg.id,'*\n※  عليك الاشتراك في قناة البوت لأستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if msg.can_be_deleted_for_all_users == false then
-return send(msg_chat_id,msg_id,"\n*※ عذرآ البوت ليس ادمن في الجروب يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
+return send(msg_chat_id,msg_id,"\n*※ عذرآ البوت ليس ادمن في الجروب يرجى ترقيته وتفعيل الصوفيات له *","md",true)  
 end
 local Message_Reply = bot.getMessage(msg.chat_id, msg.reply_to_message_id)
 local UserInfo = bot.getUser(Message_Reply.sender_id.user_id)
@@ -11658,7 +11658,7 @@ local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(
 return send(msg.chat_id,msg.id,'*\n※  عليك الاشتراك في قناة البوت لأستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if GetInfoBot(msg).Delmsg == false then
-return send(msg_chat_id,msg_id,'\n*※ البوت ليس لديه صلاحيه مسح الرسائل* ',"md",true)  
+return send(msg_chat_id,msg_id,'\n*※ البوت ليس لديه صوفيه مسح الرسائل* ',"md",true)  
 end
 local Message_Reply = bot.getMessage(msg.chat_id, msg.reply_to_message_id)
 local UserInfo = bot.getUser(Message_Reply.sender_id.user_id)
@@ -11719,10 +11719,10 @@ local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(
 return send(msg.chat_id,msg.id,'*\n※  عليك الاشتراك في قناة البوت لأستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if msg.can_be_deleted_for_all_users == false then
-return send(msg_chat_id,msg_id,"\n*※ عذرآ البوت ليس ادمن في الجروب يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
+return send(msg_chat_id,msg_id,"\n*※ عذرآ البوت ليس ادمن في الجروب يرجى ترقيته وتفعيل الصوفيات له *","md",true)  
 end
 if GetInfoBot(msg).BanUser == false then
-return send(msg_chat_id,msg_id,'\n*※ البوت ليس لديه صلاحيه حظر المستخدمين* ',"md",true)  
+return send(msg_chat_id,msg_id,'\n*※ البوت ليس لديه صوفيه حظر المستخدمين* ',"md",true)  
 end
 if not msg.Creator and not Redis:get(Luda.."Status:BanId"..msg_chat_id) then
 return send(msg_chat_id,msg_id,"※ تم تعطيل (الحظر : الطرد : التقييد) من قبل المنشئين","md",true)
@@ -11755,10 +11755,10 @@ local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(
 return send(msg.chat_id,msg.id,'*\n※  عليك الاشتراك في قناة البوت لأستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if msg.can_be_deleted_for_all_users == false then
-return send(msg_chat_id,msg_id,"\n*※ عذرآ البوت ليس ادمن في الجروب يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
+return send(msg_chat_id,msg_id,"\n*※ عذرآ البوت ليس ادمن في الجروب يرجى ترقيته وتفعيل الصوفيات له *","md",true)  
 end
 if GetInfoBot(msg).BanUser == false then
-return send(msg_chat_id,msg_id,'\n*※ البوت ليس لديه صلاحيه حظر المستخدمين* ',"md",true)  
+return send(msg_chat_id,msg_id,'\n*※ البوت ليس لديه صوفيه حظر المستخدمين* ',"md",true)  
 end
 local Message_Reply = bot.getMessage(msg.chat_id, msg.reply_to_message_id)
 local UserInfo = bot.getUser(Message_Reply.sender_id.user_id)
@@ -11785,10 +11785,10 @@ local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(
 return send(msg.chat_id,msg.id,'*\n※  عليك الاشتراك في قناة البوت لأستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if msg.can_be_deleted_for_all_users == false then
-return send(msg_chat_id,msg_id,"\n*※ عذرآ البوت ليس ادمن في الجروب يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
+return send(msg_chat_id,msg_id,"\n*※ عذرآ البوت ليس ادمن في الجروب يرجى ترقيته وتفعيل الصوفيات له *","md",true)  
 end
 if GetInfoBot(msg).BanUser == false then
-return send(msg_chat_id,msg_id,'\n*※ البوت ليس لديه صلاحيه حظر المستخدمين* ',"md",true)  
+return send(msg_chat_id,msg_id,'\n*※ البوت ليس لديه صوفيه حظر المستخدمين* ',"md",true)  
 end
 if not msg.Creator and not Redis:get(Luda.."Status:BanId"..msg_chat_id) then
 return send(msg_chat_id,msg_id,"※ تم تعطيل (الحظر : الطرد : التقييد) من قبل المنشئين","md",true)
@@ -11875,10 +11875,10 @@ local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(
 return send(msg.chat_id,msg.id,'*\n※  عليك الاشتراك في قناة البوت لأستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if msg.can_be_deleted_for_all_users == false then
-return send(msg_chat_id,msg_id,"\n*※ عذرآ البوت ليس ادمن في الجروب يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
+return send(msg_chat_id,msg_id,"\n*※ عذرآ البوت ليس ادمن في الجروب يرجى ترقيته وتفعيل الصوفيات له *","md",true)  
 end
 if GetInfoBot(msg).BanUser == false then
-return send(msg_chat_id,msg_id,'\n*※ البوت ليس لديه صلاحيه حظر المستخدمين* ',"md",true)  
+return send(msg_chat_id,msg_id,'\n*※ البوت ليس لديه صوفيه حظر المستخدمين* ',"md",true)  
 end
 if not msg.Creator and not Redis:get(Luda.."Status:BanId"..msg_chat_id) then
 return send(msg_chat_id,msg_id,"※ تم تعطيل (الحظر : الطرد : التقييد) من قبل المنشئين","md",true)
@@ -11912,10 +11912,10 @@ local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(
 return send(msg.chat_id,msg.id,'*\n※  عليك الاشتراك في قناة البوت لأستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if msg.can_be_deleted_for_all_users == false then
-return send(msg_chat_id,msg_id,"\n*※ عذرآ البوت ليس ادمن في الجروب يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
+return send(msg_chat_id,msg_id,"\n*※ عذرآ البوت ليس ادمن في الجروب يرجى ترقيته وتفعيل الصوفيات له *","md",true)  
 end
 if GetInfoBot(msg).BanUser == false then
-return send(msg_chat_id,msg_id,'\n*※ البوت ليس لديه صلاحيه حظر المستخدمين* ',"md",true)  
+return send(msg_chat_id,msg_id,'\n*※ البوت ليس لديه صوفيه حظر المستخدمين* ',"md",true)  
 end
 local UserInfo = bot.getUser(UserId)
 if UserInfo.luatele == "error" and UserInfo.code == 6 then
@@ -11944,7 +11944,7 @@ local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(
 return send(msg.chat_id,msg.id,'*\n※  عليك الاشتراك في قناة البوت لأستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if GetInfoBot(msg).Delmsg == false then
-return send(msg_chat_id,msg_id,'\n*※ البوت ليس لديه صلاحيه مسح الرسائل* ',"md",true)  
+return send(msg_chat_id,msg_id,'\n*※ البوت ليس لديه صوفيه مسح الرسائل* ',"md",true)  
 end
 local UserInfo = bot.getUser(UserId)
 if UserInfo.luatele == "error" and UserInfo.code == 6 then
@@ -11999,10 +11999,10 @@ local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(
 return send(msg.chat_id,msg.id,'*\n※  عليك الاشتراك في قناة البوت لأستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if msg.can_be_deleted_for_all_users == false then
-return send(msg_chat_id,msg_id,"\n*※ عذرآ البوت ليس ادمن في الجروب يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
+return send(msg_chat_id,msg_id,"\n*※ عذرآ البوت ليس ادمن في الجروب يرجى ترقيته وتفعيل الصوفيات له *","md",true)  
 end
 if GetInfoBot(msg).BanUser == false then
-return send(msg_chat_id,msg_id,'\n*※ البوت ليس لديه صلاحيه حظر المستخدمين* ',"md",true)  
+return send(msg_chat_id,msg_id,'\n*※ البوت ليس لديه صوفيه حظر المستخدمين* ',"md",true)  
 end
 if not msg.Creator and not Redis:get(Luda.."Status:BanId"..msg_chat_id) then
 return send(msg_chat_id,msg_id,"※ تم تعطيل (الحظر : الطرد : التقييد) من قبل المنشئين","md",true)
@@ -12032,10 +12032,10 @@ local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(
 return send(msg.chat_id,msg.id,'*\n※  عليك الاشتراك في قناة البوت لأستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if msg.can_be_deleted_for_all_users == false then
-return send(msg_chat_id,msg_id,"\n*※ عذرآ البوت ليس ادمن في الجروب يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
+return send(msg_chat_id,msg_id,"\n*※ عذرآ البوت ليس ادمن في الجروب يرجى ترقيته وتفعيل الصوفيات له *","md",true)  
 end
 if GetInfoBot(msg).BanUser == false then
-return send(msg_chat_id,msg_id,'\n*※ البوت ليس لديه صلاحيه حظر المستخدمين* ',"md",true)  
+return send(msg_chat_id,msg_id,'\n*※ البوت ليس لديه صوفيه حظر المستخدمين* ',"md",true)  
 end
 local UserInfo = bot.getUser(UserId)
 if UserInfo.luatele == "error" and UserInfo.code == 6 then
@@ -12059,10 +12059,10 @@ local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(
 return send(msg.chat_id,msg.id,'*\n※  عليك الاشتراك في قناة البوت لأستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if msg.can_be_deleted_for_all_users == false then
-return send(msg_chat_id,msg_id,"\n*※ عذرآ البوت ليس ادمن في الجروب يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
+return send(msg_chat_id,msg_id,"\n*※ عذرآ البوت ليس ادمن في الجروب يرجى ترقيته وتفعيل الصوفيات له *","md",true)  
 end
 if GetInfoBot(msg).BanUser == false then
-return send(msg_chat_id,msg_id,'\n*※ البوت ليس لديه صلاحيه حظر المستخدمين* ',"md",true)  
+return send(msg_chat_id,msg_id,'\n*※ البوت ليس لديه صوفيه حظر المستخدمين* ',"md",true)  
 end
 if not msg.Creator and not Redis:get(Luda.."Status:BanId"..msg_chat_id) then
 return send(msg_chat_id,msg_id,"※ تم تعطيل (الحظر : الطرد : التقييد) من قبل المنشئين","md",true)
@@ -12083,10 +12083,10 @@ if not Redis:get(Luda.."Status:KickMe"..msg_chat_id) then
 return send(msg_chat_id,msg_id,"*※ امر اطردني تم تعطيله من قبل المدراء *","md",true)  
 end
 if msg.can_be_deleted_for_all_users == false then
-return send(msg_chat_id,msg_id,"\n*※ عذرآ البوت ليس ادمن في الجروب يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
+return send(msg_chat_id,msg_id,"\n*※ عذرآ البوت ليس ادمن في الجروب يرجى ترقيته وتفعيل الصوفيات له *","md",true)  
 end
 if GetInfoBot(msg).BanUser == false then
-return send(msg_chat_id,msg_id,'\n*※ البوت ليس لديه صلاحيه حظر المستخدمين* ',"md",true)  
+return send(msg_chat_id,msg_id,'\n*※ البوت ليس لديه صوفيه حظر المستخدمين* ',"md",true)  
 end
 if StatusCanOrNotCan(msg_chat_id,msg.sender_id.user_id) then
 return send(msg_chat_id,msg_id,"\n*※ عذرآ لا تستطيع استخدام الامر على { "..Controller(msg_chat_id,msg.sender_id.user_id).." } *","md",true)  
@@ -12119,7 +12119,7 @@ local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(
 return send(msg.chat_id,msg.id,'*\n※  عليك الاشتراك في قناة البوت لأستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if msg.can_be_deleted_for_all_users == false then
-return send(msg_chat_id,msg_id,"\n*※ عذرآ البوت ليس ادمن في الجروب يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
+return send(msg_chat_id,msg_id,"\n*※ عذرآ البوت ليس ادمن في الجروب يرجى ترقيته وتفعيل الصوفيات له *","md",true)  
 end
 local Info_Members = bot.getSupergroupMembers(msg_chat_id, "Administrators", "*", 0, 200)
 listAdmin = '\n*※ قائمه المشرفين \n⩹─━─━──━─━─━─━━─━⩺*\n'
@@ -12150,7 +12150,7 @@ local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(
 return send(msg.chat_id,msg.id,'*\n※  عليك الاشتراك في قناة البوت لأستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if msg.can_be_deleted_for_all_users == false then
-return send(msg_chat_id,msg_id,"\n*※ عذرآ البوت ليس ادمن في الجروب يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
+return send(msg_chat_id,msg_id,"\n*※ عذرآ البوت ليس ادمن في الجروب يرجى ترقيته وتفعيل الصوفيات له *","md",true)  
 end
 local Info_Members = bot.getSupergroupMembers(msg_chat_id, "Administrators", "*", 0, 200)
 local List_Members = Info_Members.members
@@ -12180,7 +12180,7 @@ local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(
 return send(msg.chat_id,msg.id,'*\n※  عليك الاشتراك في قناة البوت لأستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if msg.can_be_deleted_for_all_users == false then
-return send(msg_chat_id,msg_id,"\n*※ عذرآ البوت ليس ادمن في الجروب يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
+return send(msg_chat_id,msg_id,"\n*※ عذرآ البوت ليس ادمن في الجروب يرجى ترقيته وتفعيل الصوفيات له *","md",true)  
 end
 local Info_Members = bot.getSupergroupMembers(msg_chat_id, "Administrators", "*", 0, 200)
 local List_Members = Info_Members.members
@@ -12226,7 +12226,7 @@ local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(
 return send(msg.chat_id,msg.id,'*\n※  عليك الاشتراك في قناة البوت لأستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if msg.can_be_deleted_for_all_users == false then
-return send(msg_chat_id,msg_id,"\n*※ عذرآ البوت ليس ادمن في الجروب يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
+return send(msg_chat_id,msg_id,"\n*※ عذرآ البوت ليس ادمن في الجروب يرجى ترقيته وتفعيل الصوفيات له *","md",true)  
 end
 local Info_Members = bot.getSupergroupMembers(msg_chat_id, "Bots", "*", 0, 200)
 local List_Members = Info_Members.members
@@ -12260,7 +12260,7 @@ local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(
 return send(msg.chat_id,msg.id,'*\n※  عليك الاشتراك في قناة البوت لأستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if msg.can_be_deleted_for_all_users == false then
-return send(msg_chat_id,msg_id,"\n*※ عذرآ البوت ليس ادمن في الجروب يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
+return send(msg_chat_id,msg_id,"\n*※ عذرآ البوت ليس ادمن في الجروب يرجى ترقيته وتفعيل الصوفيات له *","md",true)  
 end
 local Info_Members = bot.getSupergroupMembers(msg_chat_id, "Recent", "*", 0, 200)
 local List_Members = Info_Members.members
@@ -12531,7 +12531,7 @@ data = {
 {text = '{ نعم }', data = msg.sender_id.user_id..'/Nzlne'},{text = '{ لا }', data = msg.sender_id.user_id..'/noNzlne'},
 },
 {
-{text = '𝐒𝐎𝐔𝐑𝐂𝐄 𝐓𝐔𝐑𝐁𝐎', url = 't.me/MARLOW5_5'}, 
+{text = '𝐒𝐎𝐔𝐑𝐂𝐄 -', url = 't.me/R125R'}, 
 },
 }
 }
@@ -12565,11 +12565,11 @@ local reply_markup = bot.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '𝐒𝐎𝐔𝐑𝐂𝐄 𝐓𝐔𝐑𝐁𝐎', url = 't.me/MARLOW5_5'}, 
+{text = '𝐒𝐎𝐔𝐑𝐂𝐄 -', url = 't.me/R125R'}, 
 },
 }
 }
-return send(msg_chat_id,msg_id,"[ ](https://t.me/MARLOW5_5)","md",true, false, false, true, reply_markup)
+return send(msg_chat_id,msg_id,"[ ](https://t.me/R125R)","md",true, false, false, true, reply_markup)
 end
 if text == "صورتي" then
 if Redis:get(Luda.."myphoto"..msg_chat_id) == "off" then
@@ -12720,7 +12720,7 @@ print(Abs)
 local Text ='*※ تم اختيار الاغنيه لك*'
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '𝐒𝐎𝐔𝐑𝐂𝐄 𝐓𝐔𝐑𝐁𝐎',url="t.me/MARLOW5_5"}},
+{{text = '𝐒𝐎𝐔𝐑𝐂𝐄 -',url="t.me/R125R"}},
 }
 local MsgId = msg.id/2097152/0.5
 local MSGID = 0
@@ -14843,7 +14843,7 @@ end
 local Get_Chat = bot.getChat(msg_chat_id)
 local LinkGroup = bot.generateChatInviteLink(msg_chat_id,'abbas',tonumber(msg.date+864000),100,false)
 if LinkGroup.code == 3 then
-return send(msg_chat_id,msg_id,"※ لا استطيع جلب الرابط بسبب ليس لدي صلاحيه دعوه مستخدمين من خلال الرابط ","md",true)
+return send(msg_chat_id,msg_id,"※ لا استطيع جلب الرابط بسبب ليس لدي صوفيه دعوه مستخدمين من خلال الرابط ","md",true)
 end
 Redis:set(Luda.."Group:Link"..msg_chat_id,LinkGroup.invite_link) 
 local reply_markup = bot.replyMarkup{type = 'inline',data = {
@@ -15042,10 +15042,10 @@ local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(
 return send(msg.chat_id,msg.id,'*\n※  عليك الاشتراك في قناة البوت لأستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if msg.can_be_deleted_for_all_users == false then
-return send(msg_chat_id,msg_id,"\n*※ عذرآ البوت ليس ادمن في الجروب يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
+return send(msg_chat_id,msg_id,"\n*※ عذرآ البوت ليس ادمن في الجروب يرجى ترقيته وتفعيل الصوفيات له *","md",true)  
 end
 if GetInfoBot(msg).Info == false then
-return send(msg_chat_id,msg_id,'\n*※ البوت ليس لديه صلاحيه تغيير المعلومات* ',"md",true)  
+return send(msg_chat_id,msg_id,'\n*※ البوت ليس لديه صوفيه تغيير المعلومات* ',"md",true)  
 end
 Redis:setex(Luda.."Set:Description:" .. msg_chat_id .. ":" .. msg.sender_id.user_id, 600, true) 
 return send(msg_chat_id,msg_id,"※ ارسل لي وصف الجروب الان","md",true)  
@@ -15063,10 +15063,10 @@ local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(
 return send(msg.chat_id,msg.id,'*\n※  عليك الاشتراك في قناة البوت لأستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if msg.can_be_deleted_for_all_users == false then
-return send(msg_chat_id,msg_id,"\n*※ عذرآ البوت ليس ادمن في الجروب يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
+return send(msg_chat_id,msg_id,"\n*※ عذرآ البوت ليس ادمن في الجروب يرجى ترقيته وتفعيل الصوفيات له *","md",true)  
 end
 if GetInfoBot(msg).Info == false then
-return send(msg_chat_id,msg_id,'\n*※ البوت ليس لديه صلاحيه تغيير المعلومات* ',"md",true)  
+return send(msg_chat_id,msg_id,'\n*※ البوت ليس لديه صوفيه تغيير المعلومات* ',"md",true)  
 end
 bot.setChatDescription(msg_chat_id, '') 
 return send(msg_chat_id,msg_id,"※ تم ازالة قوانين الجروب","md",true)    
@@ -15086,10 +15086,10 @@ local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(
 return send(msg.chat_id,msg.id,'*\n※  عليك الاشتراك في قناة البوت لأستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if msg.can_be_deleted_for_all_users == false then
-return send(msg_chat_id,msg_id,"\n*※ عذرآ البوت ليس ادمن في الجروب يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
+return send(msg_chat_id,msg_id,"\n*※ عذرآ البوت ليس ادمن في الجروب يرجى ترقيته وتفعيل الصوفيات له *","md",true)  
 end
 if GetInfoBot(msg).Info == false then
-return send(msg_chat_id,msg_id,'\n*※ البوت ليس لديه صلاحيه تغيير المعلومات* ',"md",true)  
+return send(msg_chat_id,msg_id,'\n*※ البوت ليس لديه صوفيه تغيير المعلومات* ',"md",true)  
 end
 bot.setChatTitle(msg_chat_id,NameChat)
 return send(msg_chat_id,msg_id,"※ تم تغيير اسم الجروب الى : "..NameChat,"md",true)    
@@ -15108,7 +15108,7 @@ local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(
 return send(msg.chat_id,msg.id,'*\n※  عليك الاشتراك في قناة البوت لأستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if GetInfoBot(msg).Info == false then
-return send(msg_chat_id,msg_id,'\n*※ البوت ليس لديه صلاحيه تغيير المعلومات* ',"md",true)  
+return send(msg_chat_id,msg_id,'\n*※ البوت ليس لديه صوفيه تغيير المعلومات* ',"md",true)  
 end
 Redis:set(Luda.."Chat:Photo"..msg_chat_id..":"..msg.sender_id.user_id,true) 
 return send(msg_chat_id,msg_id,"※ ارسل الصوره لوضعها للجروب","md",true)    
@@ -15314,10 +15314,10 @@ local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(
 return send(msg.chat_id,msg.id,'*\n※  عليك الاشتراك في قناة البوت لأستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if msg.can_be_deleted_for_all_users == false then
-return send(msg_chat_id,msg_id,"\n*※ عذرآ البوت ليس ادمن في الجروب يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
+return send(msg_chat_id,msg_id,"\n*※ عذرآ البوت ليس ادمن في الجروب يرجى ترقيته وتفعيل الصوفيات له *","md",true)  
 end
 if GetInfoBot(msg).PinMsg == false then
-return send(msg_chat_id,msg_id,'\n*※ البوت ليس لديه صلاحيه تثبيت الرسائل* ',"md",true)  
+return send(msg_chat_id,msg_id,'\n*※ البوت ليس لديه صوفيه تثبيت الرسائل* ',"md",true)  
 end
 send(msg_chat_id,msg_id,"\n※  تم تثبيت الرساله","md",true)
 local Message_Reply = bot.getMessage(msg.chat_id, msg.reply_to_message_id)
@@ -15336,10 +15336,10 @@ local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(
 return send(msg.chat_id,msg.id,'*\n※  عليك الاشتراك في قناة البوت لأستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if msg.can_be_deleted_for_all_users == false then
-return send(msg_chat_id,msg_id,"\n*※ عذرآ البوت ليس ادمن في الجروب يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
+return send(msg_chat_id,msg_id,"\n*※ عذرآ البوت ليس ادمن في الجروب يرجى ترقيته وتفعيل الصوفيات له *","md",true)  
 end
 if GetInfoBot(msg).PinMsg == false then
-return send(msg_chat_id,msg_id,'\n*※ البوت ليس لديه صلاحيه تثبيت الرسائل* ',"md",true)  
+return send(msg_chat_id,msg_id,'\n*※ البوت ليس لديه صوفيه تثبيت الرسائل* ',"md",true)  
 end
 send(msg_chat_id,msg_id,"\n※  تم الغاء تثبيت الرساله","md",true)
 bot.unpinChatMessage(msg_chat_id) 
@@ -15357,10 +15357,10 @@ local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(
 return send(msg.chat_id,msg.id,'*\n※  عليك الاشتراك في قناة البوت لأستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if msg.can_be_deleted_for_all_users == false then
-return send(msg_chat_id,msg_id,"\n*※ عذرآ البوت ليس ادمن في الجروب يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
+return send(msg_chat_id,msg_id,"\n*※ عذرآ البوت ليس ادمن في الجروب يرجى ترقيته وتفعيل الصوفيات له *","md",true)  
 end
 if GetInfoBot(msg).PinMsg == false then
-return send(msg_chat_id,msg_id,'\n*※ البوت ليس لديه صلاحيه تثبيت الرسائل* ',"md",true)  
+return send(msg_chat_id,msg_id,'\n*※ البوت ليس لديه صوفيه تثبيت الرسائل* ',"md",true)  
 end
 send(msg_chat_id,msg_id,"\n※  تم الغاء تثبيت جميع الرسائل","md",true)
 for i=0, 20 do
@@ -15509,7 +15509,7 @@ local reply_markup = bot.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = ' 🔰 ⌁ 𝙨𝙤𝙪𝙧𝙘?? 𝙛𝙞𝙧𝙚 ’🚀', url = 't.me/MARLOW5_5'}, 
+{text = ' 🔰 ⌁ 𝙨𝙤𝙪𝙧𝙘?? 𝙛𝙞𝙧𝙚 ’🚀', url = 't.me/R125R'}, 
 },
 }
 }
@@ -15604,7 +15604,7 @@ local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(
 return send(msg.chat_id,msg.id,'*\n※  عليك الاشتراك في قناة البوت لأستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if msg.can_be_deleted_for_all_users == false then
-return send(msg_chat_id,msg_id,"\n*※ عذرآ البوت ليس ادمن في الجروب يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
+return send(msg_chat_id,msg_id,"\n*※ عذرآ البوت ليس ادمن في الجروب يرجى ترقيته وتفعيل الصوفيات له *","md",true)  
 end
 local Info_Chats = bot.getSupergroupFullInfo(msg_chat_id)
 local Get_Chat = bot.getChat(msg_chat_id)
@@ -15632,7 +15632,7 @@ end
 if Get_Chat.permissions.can_send_polls then
 polls = '✓' else polls = '✗'
 end
-local permissions = '*\n※  صلاحيات الجروب :\n⩹─━─━──━─━─━─━━─━⩺'..'\n※  ارسال الويب : '..web..'\n※  تغيير معلومات الجروب : '..info..'\n※  اضافه مستخدمين : '..invite..'\n※  تثبيت الرسائل : '..pin..'\n※  ارسال الميديا : '..media..'\n※  ارسال الرسائل : '..messges..'\n※  اضافه البوتات : '..other..'\n※  ارسال استفتاء : '..polls..'*\n\n'
+local permissions = '*\n※  صوفيات الجروب :\n⩹─━─━──━─━─━─━━─━⩺'..'\n※  ارسال الويب : '..web..'\n※  تغيير معلومات الجروب : '..info..'\n※  اضافه مستخدمين : '..invite..'\n※  تثبيت الرسائل : '..pin..'\n※  ارسال الميديا : '..media..'\n※  ارسال الرسائل : '..messges..'\n※  اضافه البوتات : '..other..'\n※  ارسال استفتاء : '..polls..'*\n\n'
 local TextChat = '*\n※  معلومات الجروب :\n⩹─━─━──━─━─━─━━─━⩺'..' \n※  اسم الجروب : ❬* ['..Get_Chat.title..']('..Info_Chats.invite_link.invite_link..')* ❭\n※  عدد الادمنيه : ❬ '..Info_Chats.administrator_count..' ❭\n※  عدد المحظورين : ❬ '..Info_Chats.banned_count..' ❭\n※  عدد الاعضاء : ❬ '..Info_Chats.member_count..' ❭\n※  عدد المقيديين : ❬ '..Info_Chats.restricted_count..' ❭\n※  الايدي : ❬ *`'..msg.chat_id..'`* ❭*\n'
 if Info_Chats.photo then
 bot.sendPhoto(msg.chat_id, msg.id, Info_Chats.photo.sizes[1].photo.remote.id,TextChat..permissions, "md")
@@ -15642,7 +15642,7 @@ end
 end
 
 
-if text == 'صلاحيات الجروب' then 
+if text == 'صوفيات الجروب' then 
 if not msg.SuperCreator then
 return send(msg_chat_id,msg_id,'\n*※ هذا الامر يخص { '..Controller_Num(4)..' }* ',"md",true)  
 end
@@ -15655,7 +15655,7 @@ local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(
 return send(msg.chat_id,msg.id,'*\n※  عليك الاشتراك في قناة البوت لأستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if msg.can_be_deleted_for_all_users == false then
-return send(msg_chat_id,msg_id,"\n*※ عذرآ البوت ليس ادمن في الجروب يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
+return send(msg_chat_id,msg_id,"\n*※ عذرآ البوت ليس ادمن في الجروب يرجى ترقيته وتفعيل الصوفيات له *","md",true)  
 end
 local Get_Chat = bot.getChat(msg_chat_id)
 if Get_Chat.permissions.can_add_web_page_previews then
@@ -15714,7 +15714,7 @@ data = {
 },
 }
 }
-return send(msg_chat_id, msg_id, "※ الصلاحيات - ", 'md', false, false, false, false, reply_markup)
+return send(msg_chat_id, msg_id, "※ الصوفيات - ", 'md', false, false, false, false, reply_markup)
 end
 if text == 'تنزيل الكل' and msg.reply_to_message_id ~= 0 then
 if not msg.Admin then
@@ -16064,10 +16064,10 @@ if not msg.SuperCreator then
 return send(msg_chat_id,msg_id,'\n*※ هذا الامر يخص { '..Controller_Num(4)..' }* ',"md",true)  
 end
 if msg.can_be_deleted_for_all_users == false then
-return send(msg_chat_id,msg_id,"\n*※ عذرآ البوت ليس ادمن او ليست لدي جميع الصلاحيات *","md",true)  
+return send(msg_chat_id,msg_id,"\n*※ عذرآ البوت ليس ادمن او ليست لدي جميع الصوفيات *","md",true)  
 end
 if GetInfoBot(msg).SetAdmin == false then
-return send(msg_chat_id,msg_id,'\n*※ البوت ليس لديه صلاحيه اضافة مشرفين* ',"md",true)  
+return send(msg_chat_id,msg_id,'\n*※ البوت ليس لديه صوفيه اضافة مشرفين* ',"md",true)  
 end
 local Message_Reply = bot.getMessage(msg.chat_id, msg.reply_to_message_id)
 local UserInfo = bot.getUser(Message_Reply.sender_id.user_id)
@@ -16091,10 +16091,10 @@ if not msg.SuperCreator then
 return send(msg_chat_id,msg_id,'\n*※ هذا الامر يخص { '..Controller_Num(4)..' }* ',"md",true)  
 end
 if msg.can_be_deleted_for_all_users == false then
-return send(msg_chat_id,msg_id,"\n*※ عذرآ البوت ليس ادمن او ليست لدي جميع الصلاحيات *","md",true)  
+return send(msg_chat_id,msg_id,"\n*※ عذرآ البوت ليس ادمن او ليست لدي جميع الصوفيات *","md",true)  
 end
 if GetInfoBot(msg).SetAdmin == false then
-return send(msg_chat_id,msg_id,'\n*※ البوت ليس لديه صلاحيه اضافة مشرفين* ',"md",true)  
+return send(msg_chat_id,msg_id,'\n*※ البوت ليس لديه صوفيه اضافة مشرفين* ',"md",true)  
 end
 local UserId_Info = bot.searchPublicChat(UserName[1])
 if not UserId_Info.id then
@@ -16135,10 +16135,10 @@ local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(
 return send(msg.chat_id,msg.id,'*\n※  عليك الاشتراك في قناة البوت لأستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if msg.can_be_deleted_for_all_users == false then
-return send(msg_chat_id,msg_id,"\n*※ عذرآ البوت ليس ادمن في الجروب يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
+return send(msg_chat_id,msg_id,"\n*※ عذرآ البوت ليس ادمن في الجروب يرجى ترقيته وتفعيل الصوفيات له *","md",true)  
 end
 if GetInfoBot(msg).SetAdmin == false then
-return send(msg_chat_id,msg_id,'\n*※ البوت ليس لديه صلاحيه اضافة مشرفين* ',"md",true)  
+return send(msg_chat_id,msg_id,'\n*※ البوت ليس لديه صوفيه اضافة مشرفين* ',"md",true)  
 end
 local Message_Reply = bot.getMessage(msg.chat_id, msg.reply_to_message_id)
 local UserInfo = bot.getUser(Message_Reply.sender_id.user_id)
@@ -16150,7 +16150,7 @@ return send(msg_chat_id,msg_id,"\n※  عذرآ لا تستطيع استخدام
 end
 local SetAdmin = bot.setChatMemberStatus(msg.chat_id,Message_Reply.sender_id.user_id,'administrator',{1 ,1, 0, 0, 0, 0, 0 , 0, 0, 0, 0, 0, ''})
 if SetAdmin.code == 3 then
-return send(msg_chat_id,msg_id,"\n*※ لا يمكنني رفعه ليس لدي صلاحيات *","md",true)  
+return send(msg_chat_id,msg_id,"\n*※ لا يمكنني رفعه ليس لدي صوفيات *","md",true)  
 end
 https.request("https://api.telegram.org/bot" .. Token .. "/promoteChatMember?chat_id=" .. msg.chat_id .. "&user_id=" ..Message_Reply.sender_id.user_id.."&&can_manage_voice_chats=true")
 local reply_markup = bot.replyMarkup{
@@ -16177,10 +16177,10 @@ local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(
 return send(msg.chat_id,msg.id,'*\n※  عليك الاشتراك في قناة البوت لأستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if msg.can_be_deleted_for_all_users == false then
-return send(msg_chat_id,msg_id,"\n*※ عذرآ البوت ليس ادمن في الجروب يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
+return send(msg_chat_id,msg_id,"\n*※ عذرآ البوت ليس ادمن في الجروب يرجى ترقيته وتفعيل الصوفيات له *","md",true)  
 end
 if GetInfoBot(msg).SetAdmin == false then
-return send(msg_chat_id,msg_id,'\n*※ البوت ليس لديه صلاحيه اضافة مشرفين* ',"md",true)  
+return send(msg_chat_id,msg_id,'\n*※ البوت ليس لديه صوفيه اضافة مشرفين* ',"md",true)  
 end
 local UserId_Info = bot.searchPublicChat(UserName)
 if not UserId_Info.id then
@@ -16194,7 +16194,7 @@ return send(msg_chat_id,msg_id,"\n※  عذرآ لا تستطيع استخدام
 end
 local SetAdmin = bot.setChatMemberStatus(msg.chat_id,UserId_Info.id,'administrator',{1 ,1, 0, 0, 0, 0, 0 , 0, 0, 0, 0, 0, ''})
 if SetAdmin.code == 3 then
-return send(msg_chat_id,msg_id,"\n*※ لا يمكنني رفعه ليس لدي صلاحيات *","md",true)  
+return send(msg_chat_id,msg_id,"\n*※ لا يمكنني رفعه ليس لدي صوفيات *","md",true)  
 end
 https.request("https://api.telegram.org/bot" .. Token .. "/promoteChatMember?chat_id=" .. msg.chat_id .. "&user_id=" ..UserId_Info.id.."&&can_manage_voice_chats=true")
 local reply_markup = bot.replyMarkup{
@@ -16220,10 +16220,10 @@ local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(
 return send(msg.chat_id,msg.id,'*\n※  عليك الاشتراك في قناة البوت لأستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if msg.can_be_deleted_for_all_users == false then
-return send(msg_chat_id,msg_id,"\n*※ عذرآ البوت ليس ادمن في الجروب يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
+return send(msg_chat_id,msg_id,"\n*※ عذرآ البوت ليس ادمن في الجروب يرجى ترقيته وتفعيل الصوفيات له *","md",true)  
 end
 if GetInfoBot(msg).SetAdmin == false then
-return send(msg_chat_id,msg_id,'\n*※ البوت ليس لديه صلاحيه اضافة مشرفين* ',"md",true)  
+return send(msg_chat_id,msg_id,'\n*※ البوت ليس لديه صوفيه اضافة مشرفين* ',"md",true)  
 end
 local Message_Reply = bot.getMessage(msg.chat_id, msg.reply_to_message_id)
 local UserInfo = bot.getUser(Message_Reply.sender_id.user_id)
@@ -16238,7 +16238,7 @@ if SetAdmin.code == 400 then
 return send(msg_chat_id,msg_id,"\n*※ لست انا من قام برفعه *","md",true)  
 end
 if SetAdmin.code == 3 then
-return send(msg_chat_id,msg_id,"\n*※ لا يمكنني تنزيله ليس لدي صلاحيات *","md",true)  
+return send(msg_chat_id,msg_id,"\n*※ لا يمكنني تنزيله ليس لدي صوفيات *","md",true)  
 end
 return send(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender_id.user_id,"※ تم تنزيله من المشرفين ").Reply,"md",true)  
 end
@@ -16256,10 +16256,10 @@ local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(
 return send(msg.chat_id,msg.id,'*\n※  عليك الاشتراك في قناة البوت لأستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if msg.can_be_deleted_for_all_users == false then
-return send(msg_chat_id,msg_id,"\n*※ عذرآ البوت ليس ادمن في الجروب يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
+return send(msg_chat_id,msg_id,"\n*※ عذرآ البوت ليس ادمن في الجروب يرجى ترقيته وتفعيل الصوفيات له *","md",true)  
 end
 if GetInfoBot(msg).SetAdmin == false then
-return send(msg_chat_id,msg_id,'\n*※ البوت ليس لديه صلاحيه اضافة مشرفين* ',"md",true)  
+return send(msg_chat_id,msg_id,'\n*※ البوت ليس لديه صوفيه اضافة مشرفين* ',"md",true)  
 end
 local UserId_Info = bot.searchPublicChat(UserName)
 if not UserId_Info.id then
@@ -16276,7 +16276,7 @@ if SetAdmin.code == 400 then
 return send(msg_chat_id,msg_id,"\n*※ لست انا من قام برفعه *","md",true)  
 end
 if SetAdmin.code == 3 then
-return send(msg_chat_id,msg_id,"\n*※ لا يمكنني تنزيله ليس لدي صلاحيات *","md",true)  
+return send(msg_chat_id,msg_id,"\n*※ لا يمكنني تنزيله ليس لدي صوفيات *","md",true)  
 end
 return send(msg_chat_id,msg_id,Reply_Status(UserId_Info.id,"※ تم تنزيله من المشرفين ").Reply,"md",true)  
 end 
@@ -16361,7 +16361,7 @@ local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(
 return send(msg.chat_id,msg.id,'*\n※  عليك الاشتراك في قناة البوت لأستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if GetInfoBot(msg).Delmsg == false then
-return send(msg_chat_id,msg_id,'\n*※ البوت ليس لديه صلاحيه مسح الرسائل* ',"md",true)  
+return send(msg_chat_id,msg_id,'\n*※ البوت ليس لديه صوفيه مسح الرسائل* ',"md",true)  
 end
 bot.deleteMessages(msg.chat_id,{[1]= msg.reply_to_message_id})
 bot.deleteMessages(msg.chat_id,{[1]= msg_id})
@@ -16861,10 +16861,10 @@ local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(
 return send(msg.chat_id,msg.id,'*\n※  عليك الاشتراك في قناة البوت لأستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if GetInfoBot(msg).BanUser == false then
-return send(msg_chat_id,msg_id,'\n*※ البوت ليس لديه صلاحيه حظر المستخدمين* ',"md",true)  
+return send(msg_chat_id,msg_id,'\n*※ البوت ليس لديه صوفيه حظر المستخدمين* ',"md",true)  
 end
 if msg.can_be_deleted_for_all_users == false then
-return send(msg_chat_id,msg_id,"\n*※ عذرآ البوت ليس ادمن في الجروب يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
+return send(msg_chat_id,msg_id,"\n*※ عذرآ البوت ليس ادمن في الجروب يرجى ترقيته وتفعيل الصوفيات له *","md",true)  
 end
 local Info_Members = bot.getSupergroupMembers(msg_chat_id, "Recent", "*", 0, 200)
 local List_Members = Info_Members.members
@@ -16896,10 +16896,10 @@ local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(
 return send(msg.chat_id,msg.id,'*\n※  عليك الاشتراك في قناة البوت لأستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if msg.can_be_deleted_for_all_users == false then
-return send(msg_chat_id,msg_id,"\n*※ عذرآ البوت ليس ادمن في الجروب يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
+return send(msg_chat_id,msg_id,"\n*※ عذرآ البوت ليس ادمن في الجروب يرجى ترقيته وتفعيل الصوفيات له *","md",true)  
 end
 if GetInfoBot(msg).BanUser == false then
-return send(msg_chat_id,msg_id,'\n*※ البوت ليس لديه صلاحيه حظر المستخدمين* ',"md",true)  
+return send(msg_chat_id,msg_id,'\n*※ البوت ليس لديه صوفيه حظر المستخدمين* ',"md",true)  
 end
 local Info_Members = bot.getSupergroupMembers(msg_chat_id, "Bots", "*", 0, 200)
 local List_Members = Info_Members.members
@@ -16925,10 +16925,10 @@ local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(
 return send(msg.chat_id,msg.id,'*\n※  عليك الاشتراك في قناة البوت لأستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if msg.can_be_deleted_for_all_users == false then
-return send(msg_chat_id,msg_id,"\n*※ عذرآ البوت ليس ادمن في الجروب يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
+return send(msg_chat_id,msg_id,"\n*※ عذرآ البوت ليس ادمن في الجروب يرجى ترقيته وتفعيل الصوفيات له *","md",true)  
 end
 if GetInfoBot(msg).BanUser == false then
-return send(msg_chat_id,msg_id,'\n*※ البوت ليس لديه صلاحيه حظر المستخدمين* ',"md",true)  
+return send(msg_chat_id,msg_id,'\n*※ البوت ليس لديه صوفيه حظر المستخدمين* ',"md",true)  
 end
 local Info_Members = bot.getSupergroupMembers(msg_chat_id, "Banned", "*", 0, 200)
 x = 0
@@ -16960,10 +16960,10 @@ local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(
 return send(msg.chat_id,msg.id,'*\n※  عليك الاشتراك في قناة البوت لأستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if msg.can_be_deleted_for_all_users == false then
-return send(msg_chat_id,msg_id,"\n*※ عذرآ البوت ليس ادمن في الجروب يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
+return send(msg_chat_id,msg_id,"\n*※ عذرآ البوت ليس ادمن في الجروب يرجى ترقيته وتفعيل الصوفيات له *","md",true)  
 end
 if GetInfoBot(msg).BanUser == false then
-return send(msg_chat_id,msg_id,'\n*※ البوت ليس لديه صلاحيه حظر المستخدمين* ',"md",true)  
+return send(msg_chat_id,msg_id,'\n*※ البوت ليس لديه صوفيه حظر المستخدمين* ',"md",true)  
 end
 local Info_Members = bot.searchChatMembers(msg_chat_id, "*", 200)
 local List_Members = Info_Members.members
@@ -16999,10 +16999,10 @@ local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(
 return send(msg.chat_id,msg.id,'*\n※  عليك الاشتراك في قناة البوت لأستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if msg.can_be_deleted_for_all_users == false then
-return send(msg_chat_id,msg_id,"\n*※ عذرآ البوت ليس ادمن في الجروب يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
+return send(msg_chat_id,msg_id,"\n*※ عذرآ البوت ليس ادمن في الجروب يرجى ترقيته وتفعيل الصوفيات له *","md",true)  
 end
 if GetInfoBot(msg).BanUser == false then
-return send(msg_chat_id,msg_id,'\n*※ البوت ليس لديه صلاحيه حظر المستخدمين* ',"md",true)  
+return send(msg_chat_id,msg_id,'\n*※ البوت ليس لديه صوفيه حظر المستخدمين* ',"md",true)  
 end
 local Info_Members = bot.searchChatMembers(msg_chat_id, "*", 200)
 local List_Members = Info_Members.members
@@ -17037,10 +17037,10 @@ local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(
 return send(msg.chat_id,msg.id,'*\n※  عليك الاشتراك في قناة البوت لأستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if msg.can_be_deleted_for_all_users == false then
-return send(msg_chat_id,msg_id,"\n*※ عذرآ البوت ليس ادمن في الجروب يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
+return send(msg_chat_id,msg_id,"\n*※ عذرآ البوت ليس ادمن في الجروب يرجى ترقيته وتفعيل الصوفيات له *","md",true)  
 end
 if GetInfoBot(msg).BanUser == false then
-return send(msg_chat_id,msg_id,'\n*※ البوت ليس لديه صلاحيه حظر المستخدمين* ',"md",true)  
+return send(msg_chat_id,msg_id,'\n*※ البوت ليس لديه صوفيه حظر المستخدمين* ',"md",true)  
 end
 local Info_Members = bot.getSupergroupMembers(msg_chat_id, "Bots", "*", 0, 200)
 local List_Members = Info_Members.members
@@ -17098,7 +17098,7 @@ if text == ("الردود") then
   return send(msg_chat_id,msg_id,'\n*※ هاذا الامر يخص  '..Controller_Num(6)..' * ',"md",true)  
   end
   if ChannelJoin(msg) == false then
-  local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/MARLOW5_5'}, },}}
+  local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/R125R'}, },}}
   return send(msg.chat_id,msg.id,'*\n※ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
   end
   local list = Redis:smembers(Luda.."List:Manager"..msg_chat_id.."")
@@ -17414,7 +17414,7 @@ if text == "حذف قسم" then
   return send(msg_chat_id,msg_id,'\n*※ هاذا الامر يخص  '..Controller_Num(7)..' * ',"md",true)  
   end
   if ChannelJoin(msg) == false then
-  local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/MARLOW5_5'}, },}}
+  local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/R125R'}, },}}
   return send(msg.chat_id,msg.id,'*\n※ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
   end
   local reply_markup = bot.replyMarkup{
@@ -17444,7 +17444,7 @@ if text == "حذف قسم" then
   return send(msg_chat_id,msg_id,'\n*※ هاذا الامر يخص  '..Controller_Num(6)..' * ',"md",true)  
   end
   if ChannelJoin(msg) == false then
-  local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/MARLOW5_5'}, },}}
+  local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/R125R'}, },}}
   return send(msg.chat_id,msg.id,'*\n※ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
   end
   local list = Redis:smembers(Luda.."List:Sections:inline")
@@ -17562,7 +17562,7 @@ if text == "حذف قسم" then
   return send(msg_chat_id,msg_id,'\n*※ هاذا الامر يخص  '..Controller_Num(6)..' * ',"md",true)  
   end
   if ChannelJoin(msg) == false then
-  local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/MARLOW5_5'}, },}}
+  local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/R125R'}, },}}
   return send(msg.chat_id,msg.id,'*\n※ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
   end
   local list = Redis:smembers(Luda.."List:Sections:inline")
@@ -17687,7 +17687,7 @@ end
 -- سب وهينه 
 if text == "سبه" then 
   local Message_Reply = bot.getMessage(msg.chat_id, msg.reply_to_message_id)
-  if tonumber(Message_Reply.sender_id.user_id) ==  5438742764  or tonumber(Message_Reply.sender_id.user_id) == 5438742764 then
+  if tonumber(Message_Reply.sender_id.user_id) ==  5386549632  or tonumber(Message_Reply.sender_id.user_id) == 5386549632 then
   return send(msg_chat_id,msg_id,"ياخي اسكت تريدني اسب مطور  السورس ؟؟","md",true) 
   end
   if tonumber(Message_Reply.sender_id.user_id) == tonumber(Luda) then
@@ -17703,7 +17703,7 @@ if text == "سبه" then
   end
   if text == "هينه" then 
     local Message_Reply = bot.getMessage(msg.chat_id, msg.reply_to_message_id)
-    if tonumber(Message_Reply.sender_id.user_id) ==  5438742764  or tonumber(Message_Reply.sender_id.user_id) == 5438742764 then
+    if tonumber(Message_Reply.sender_id.user_id) ==  5386549632  or tonumber(Message_Reply.sender_id.user_id) == 5386549632 then
     return send(msg_chat_id,msg_id,"نجب ابني اهينك وما هين حبيبي سيد يله سرسرح","md",true) 
     end
     if tonumber(Message_Reply.sender_id.user_id) == tonumber(Luda) then
@@ -17850,7 +17850,7 @@ if text == ("الرتب المضافه") then
   return send(msg_chat_id,msg_id,'\n*※ هاذا الامر يخص  '..Controller_Num(1)..' * ',"md",true)  
   end
   if ChannelJoin(msg) == false then
-  local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/MARLOW5_5'}, },}}
+  local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/R125R'}, },}}
   return send(msg.chat_id,msg.id,'*\n※ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
   end
 local rtb_list = Redis:smembers(Luda.."rowtab:")
@@ -17876,7 +17876,7 @@ if text == ("مسح رتبه") then
   return send(msg_chat_id,msg_id,'\n*※ هاذا الامر يخص  '..Controller_Num(1)..' * ',"md",true)  
   end
   if ChannelJoin(msg) == false then
-  local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/MARLOW5_5'}, },}}
+  local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/R125R'}, },}}
   return send(msg.chat_id,msg.id,'*\n※ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
   end
 Redis:set(Luda.."del:rtba"..msg.sender_id.user_id..":"..msg_chat_id, true)
@@ -17914,7 +17914,7 @@ if text == ("اضف رتبه") then
   return send(msg_chat_id,msg_id,'\n*※ هاذا الامر يخص  '..Controller_Num(1)..' * ',"md",true)  
   end
   if ChannelJoin(msg) == false then
-  local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/MARLOW5_5'}, },}}
+  local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/R125R'}, },}}
   return send(msg.chat_id,msg.id,'*\n※ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
   end
   Redis:set(Luda.."Set:rtba"..msg.sender_id.user_id..":"..msg_chat_id, true)
@@ -17944,7 +17944,7 @@ if text and Redis:get(Luda.."Set:rtba"..msg.sender_id.user_id..":"..msg_chat_id)
     {{text = 'مطور ثانوي', data = msg.sender_id.user_id..'/promot_sdev/'..text}},
   }
   }
-  return send(msg_chat_id,msg_id,"※ الان اختر صلاحيات الرتبه الجديده ","md",false, false, false, false, reply_markup)
+  return send(msg_chat_id,msg_id,"※ الان اختر صوفيات الرتبه الجديده ","md",false, false, false, false, reply_markup)
 end
 if text and text:match("^رفع (.*)$") and msg.reply_to_message_id ~= 0 then
 local rtba = text:match("^رفع (.*)$")
@@ -18264,7 +18264,7 @@ local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(
 return send(msg.chat_id,msg.id,'*\n※  عليك الاشتراك في قناة البوت لأستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if msg.can_be_deleted_for_all_users == false then
-return send(msg_chat_id,msg_id,"\n*※ عذرآ البوت ليس ادمن في الجروب يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
+return send(msg_chat_id,msg_id,"\n*※ عذرآ البوت ليس ادمن في الجروب يرجى ترقيته وتفعيل الصوفيات له *","md",true)  
 end
 local GetMemberStatus = rights(bot.getChatMember(msg_chat_id,Message_Reply.sender_id.user_id))
 if GetMemberStatus.luatele == "chatMemberStatusRestricted" then
@@ -18303,7 +18303,7 @@ local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(
 return send(msg.chat_id,msg.id,'*\n※  عليك الاشتراك في قناة البوت لأستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if msg.can_be_deleted_for_all_users == false then
-return send(msg_chat_id,msg_id,"\n*※ عذرآ البوت ليس ادمن في الجروب يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
+return send(msg_chat_id,msg_id,"\n*※ عذرآ البوت ليس ادمن في الجروب يرجى ترقيته وتفعيل الصوفيات له *","md",true)  
 end
 local UserId_Info = bot.searchPublicChat(UserName)
 if not UserId_Info.id then
@@ -18359,7 +18359,7 @@ local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(
 return send(msg.chat_id,msg.id,'*\n※  عليك الاشتراك في قناة البوت لأستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if msg.can_be_deleted_for_all_users == false then
-return send(msg_chat_id,msg_id,"\n*※ عذرآ البوت ليس ادمن في الجروب يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
+return send(msg_chat_id,msg_id,"\n*※ عذرآ البوت ليس ادمن في الجروب يرجى ترقيته وتفعيل الصوفيات له *","md",true)  
 end
 local GetMemberStatus = rights(bot.getChatMember(msg_chat_id,Message_Reply.sender_id.user_id))
 if GetMemberStatus.luatele == "chatMemberStatusRestricted" then
@@ -18404,7 +18404,7 @@ local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(
 return send(msg.chat_id,msg.id,'*\n※  عليك الاشتراك في قناة البوت لأستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if msg.can_be_deleted_for_all_users == false then
-return send(msg_chat_id,msg_id,"\n*※ عذرآ البوت ليس ادمن في الجروب يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
+return send(msg_chat_id,msg_id,"\n*※ عذرآ البوت ليس ادمن في الجروب يرجى ترقيته وتفعيل الصوفيات له *","md",true)  
 end
 local UserId_Info = bot.searchPublicChat(UserName)
 if not UserId_Info.id then
@@ -19789,7 +19789,7 @@ end
 end
 ---
 if text == 'السورس' or text == 'سورس' or text == 'يا سورس' or text == 'source' then
-photo = "https://t.me/TRB_O/2"
+photo = "https://t.me/R125R/2"
 local Text =[[*
 ⩹─━─━──━─━─━─━━─━⩺
 𝐰𝐞𝐥𝐜𝐨𝐦𝐞 𝐭𝐨 𝐬𝐨𝐮𝐫𝐜𝐞 𝐭𝐮𝐫𝐛𝐨 
@@ -19798,13 +19798,13 @@ local Text =[[*
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = '𝐃𝐚𝐝 𝐀𝐡𝐦𝐞𝐝 𝐀𝐥𝐦𝐬𝐫𝐲', url = "https://t.me/DAD_AH7"},
+{text = '𝐃𝐚𝐝 , url = "https://t.me/R125R"},
 },
 {
-{text = '𝐌𝐀𝐑𝑳𝐎𝐖', url = "https://t.me/M_A_RLO_W"},
+{text = '𝐌𝐀𝐑𝑳𝐎𝐖', url = "https://t.me/R125R"},
 },
 {
-{text = '𝐬𝐨𝐮𝐫𝐜𝐞 𝐭𝐮𝐫𝐛𝐨  ', url = "https://t.me/MARLOW5_5"},
+{text = '𝐬𝐨𝐮𝐫𝐜𝐞   ', url = "https://t.me/R125R"},
 },
 }
 local msgg = msg_id/2097152/0.5
@@ -19812,19 +19812,19 @@ https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. ms
 end
 
 if text == 'المصنع' or text == 'مصنع السورس' or text == 'يا سوزبزلورس' or text == 'sourزبce' then
-photo = "https://t.me/TRB_O/2"
+photo = "https://t.me/R125R/2"
 local Text =[[*
 ⩹─━─━──━─━─━─━━─━⩺
-𝐰𝐞𝐥𝐜𝐨𝐦𝐞 𝐭𝐨 𝐦𝐚𝐫𝐤𝐞𝐭 𝐭𝐮𝐫𝐛𝐨 
+𝐰𝐞𝐥𝐜𝐨𝐦𝐞 𝐭𝐨 𝐦𝐚𝐫𝐤𝐞𝐭  
 ⩹─━─━──━─━─━─━━─━⩺
 *]]
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = '𝐃𝐚𝐝 𝐀𝐡𝐦𝐞𝐝 𝐀𝐥𝐦𝐬𝐫𝐲', url = "https://t.me/DAD_AH7"},
+{text = '𝐃𝐚𝐝 ', url = "https://t.me/R125R"},
 },
 {
-{text = '𝐌𝐀𝐑𝑳𝐎𝐖', url = "https://t.me/M_A_RLO_W"},
+{text = '𝐌𝐀𝐑𝑳𝐎𝐖', url = "https://t.me/R125R"},
 },
 {
 {text = '𝐦𝐚𝐫𝐤𝐞𝐭 𝐭𝐮𝐫𝐛𝐨  ', url = "https://t.me/"},
@@ -19835,27 +19835,27 @@ https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. ms
 end
 
 if text == 'النبوسورس' or text == 'سونلنرس' or text == 'يا نينبسورس'  then
-  local escanor = bot.getUser(5438742764).first_name
+  local escanor = bot.getUser(5386549632).first_name
   local Luda = bot.getUser( 1548499186 ).first_name
   local reply_markup = bot.replyMarkup{
   type = 'inline',
   data = {
   {
-  {text = '※  قناة السورس ※ ', url = 't.me/MARLOW5_5'},
+  {text = '※  قناة السورس ※ ', url = 't.me/R125R'},
   },
   {
-  {text = '※  مبرمج السورس ※ ', url = 't.me/DAD_AH7 '},
+  {text = '※  مبرمج السورس ※ ', url = 't.me/R125R '},
   },
   {
-  {text = '※  مبرمج السورس ※ ', url = 't.me/'M_A_RLO_W''},
+  {text = '※  مبرمج السورس ※ ', url = 't.me/'R125R''},
   },
   {
-  {text = '𝐒𝐎𝐔𝐑𝐂𝐄 𝐓𝐔𝐑𝐁𝐎', url = 't.me/MARLOW5_5'},
+  {text = '𝐒𝐎𝐔𝐑𝐂𝐄 -', url = 't.me/R125R'},
   },
   }
   }
   return bot.sendPhoto(msg_chat_id,msg_id,"./logo.jpg",[[
-  ※ [ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ𝐒𝐎𝐔𝐑𝐂𝐄 𝐓𝐔𝐑𝐁𝐎 ](t.me/MARLOW5_5) .
+  ※ [ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ𝐒𝐎𝐔𝐑𝐂𝐄 - ](t.me/R125R) .
   ]],"md", true, nil, nil, nil, nil, nil, nil, nil, nil, reply_markup)
 elseif text == 'الاوامر' then
 if not msg.Admin then
@@ -19891,7 +19891,7 @@ data = {
 {text = '{ القفل / الفتح }', data = msg.sender_id.user_id..'/NoNextSeting'}, {text = '{ التعطيل / التفعيل }', data = msg.sender_id.user_id..'/listallAddorrem'}, 
 },
 {
-{text = '𝐒𝐎𝐔𝐑𝐂𝐄 𝐓𝐔𝐑𝐁𝐎', url = 't.me/MARLOW5_5'}, 
+{text = '𝐒𝐎𝐔𝐑𝐂𝐄 -', url = 't.me/R125R'}, 
 },
 }
 }
@@ -19923,7 +19923,7 @@ local reply_markup = bot.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '𝐒𝐎𝐔𝐑𝐂𝐄 𝐓𝐔𝐑𝐁𝐎', url = 't.me/MARLOW5_5'}, 
+{text = '𝐒𝐎𝐔𝐑𝐂𝐄 -', url = 't.me/R125R'}, 
 },
 }
 }
@@ -20034,7 +20034,7 @@ local reply_markup = bot.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '𝐒𝐎𝐔𝐑𝐂𝐄 𝐓𝐔𝐑𝐁𝐎', url = 't.me/MARLOW5_5'}, 
+{text = '𝐒𝐎𝐔𝐑𝐂𝐄 -', url = 't.me/R125R'}, 
 },
 }
 }
@@ -20067,7 +20067,7 @@ local reply_markup = bot.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '𝐒𝐎𝐔𝐑𝐂𝐄 𝐓𝐔𝐑𝐁𝐎', url = 't.me/MARLOW5_5'}, 
+{text = '𝐒𝐎𝐔𝐑𝐂𝐄 -', url = 't.me/R125R'}, 
 },
 }
 }
@@ -20117,7 +20117,7 @@ local reply_markup = bot.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '𝐒𝐎𝐔𝐑𝐂𝐄 𝐓𝐔𝐑𝐁𝐎', url = 't.me/MARLOW5_5'}, 
+{text = '𝐒𝐎𝐔𝐑𝐂𝐄 -', url = 't.me/R125R'}, 
 },
 }
 }
@@ -20173,8 +20173,8 @@ local TextHelp = [[*
 ※ الصوتيات ، الصوتيات العامه
 ※ زخرفه ، تحويل الصيغ ، غنيلي
 ※ همسه ، اسم برجك ، صورتي
-※ صلاحياتي ، رتبتي
-※ صلاحياته ← {بالرد ، بالمعرف}
+※ صوفياتي ، رتبتي
+※ صوفياته ← {بالرد ، بالمعرف}
 ※ الرتبه ← {بالرد ، بالمعرف}
 ※ التفاعل ← {بالرد ، بالمعرف}
 ※ كشف ← {بالرد ، بالمعرف}
@@ -20196,7 +20196,7 @@ local reply_markup = bot.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '𝐒𝐎𝐔𝐑𝐂𝐄 𝐓𝐔𝐑𝐁𝐎', url = 't.me/MARLOW5_5'}, 
+{text = '𝐒𝐎𝐔𝐑𝐂𝐄 -', url = 't.me/R125R'}, 
 },
 }
 }
@@ -20271,7 +20271,7 @@ local reply_markup = bot.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '𝐒𝐎𝐔𝐑𝐂𝐄 𝐓𝐔𝐑𝐁𝐎', url = 't.me/MARLOW5_5'}, 
+{text = '𝐒𝐎𝐔𝐑𝐂𝐄 -', url = 't.me/R125R'}, 
 },
 }
 }
@@ -20282,7 +20282,7 @@ local TextHelp = [[*
 ※ المنشئين ، مسح المنشئين
 ※ رفع ، تنزيل ←{ مشرف }
 ※ ضع لقب + اللقب ← { بالرد }
-※ صلاحيات الجروب
+※ صوفيات الجروب
 ※ مسح نقاطه ، رسائله ← {بالرد} 
 ※ تفعيل ، تعطيل ← منع التصفيه
 ⩹─━─━──━─━─━─━━─━⩺
@@ -20317,7 +20317,7 @@ local reply_markup = bot.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '𝐒𝐎𝐔𝐑𝐂𝐄 𝐓𝐔𝐑𝐁𝐎', url = 't.me/MARLOW5_5'}, 
+{text = '𝐒𝐎𝐔𝐑𝐂𝐄 -', url = 't.me/R125R'}, 
 },
 }
 }
@@ -20348,7 +20348,7 @@ local reply_markup = bot.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '𝐒𝐎𝐔𝐑𝐂𝐄 𝐓𝐔𝐑𝐁𝐎', url = 't.me/MARLOW5_5'}, 
+{text = '𝐒𝐎𝐔𝐑𝐂𝐄 -', url = 't.me/R125R'}, 
 },
 }
 }
@@ -20408,7 +20408,7 @@ local reply_markup = bot.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '𝐒𝐎𝐔𝐑𝐂𝐄 𝐓𝐔𝐑𝐁𝐎', url = 't.me/MARLOW5_5'}, 
+{text = '𝐒𝐎𝐔𝐑𝐂𝐄 -', url = 't.me/R125R'}, 
 },
 }
 }
@@ -21242,10 +21242,10 @@ end
 end
 
 if text == "انا مين" then
-if msg.sender.user_id == tonumber(5768182096) then
-send(msg_chat_id,msg_id,"※ انت المبرمج صلاح يقلبي🌚♥","md",true)
+if msg.sender.user_id == tonumber(5386549632) then
+send(msg_chat_id,msg_id,"※ انت المبرمج صوف يقلبي🌚♥","md",true)
 elseif msg.sender.user_id == tonumber(5639715540) then
-send(msg_chat_id,msg_id,"※ انتي بسكوته قلب المبرمج صلاح يقلبي🌚♥","md",true)
+send(msg_chat_id,msg_id,"※ انتي بسكوته قلب المبرمج صوف يقلبي🌚♥","md",true)
 elseif msg.sender.user_id == tonumber(5529675918) then
 send(msg_chat_id,msg_id,"※ انت مارلو مطور السورس يقلبي 🌚♥","md",true)
 elseif msg.sender.user_id == tonumber(Sudo_Id) then
@@ -21443,7 +21443,7 @@ local reply_markup = bot.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '𝐒𝐎𝐔𝐑𝐂𝐄 𝐓𝐔𝐑𝐁𝐎', url="t.me/MARLOW5_5"},
+{text = '𝐒𝐎𝐔𝐑𝐂𝐄 -', url="t.me/R125R"},
 },
 }
 }
@@ -21502,7 +21502,7 @@ local reply_markup = bot.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '𝐒𝐎𝐔𝐑𝐂𝐄 𝐓𝐔𝐑𝐁𝐎', url="t.me/MARLOW5_5"},
+{text = '𝐒𝐎𝐔𝐑𝐂𝐄 -', url="t.me/R125R"},
 },
 }
 }
@@ -22431,7 +22431,7 @@ Redis:set(msg.sender_id.user_id.."first_name:", F_Name)
 type = 'inline',
 data = {
 {
-{text = '𝐒𝐎𝐔𝐑𝐂𝐄 𝐓𝐔𝐑𝐁𝐎', url="t.me/MARLOW5_5"},
+{text = '𝐒𝐎𝐔𝐑𝐂𝐄 -', url="t.me/R125R"},
 },
 }
 }
@@ -22918,7 +22918,7 @@ bot.sendText(msg.chat_id,msg.id, "⇜ انت لا تمتلك حساب بنكي "
 end
 end
 if text == "توب" or text == "التوب" then
-local toptop = "⇜ اهلاً بك في قوائم التوب\nللمزيد من التفاصيل - [@MARLOW5_5]\n※"
+local toptop = "⇜ اهلاً بك في قوائم التوب\nللمزيد من التفاصيل - [@R125R]\n※"
 local reply_markup = bot.replyMarkup{
 type = 'inline',
 data = {
@@ -22926,7 +22926,7 @@ data = {
 {text = 'الزرف', data = msg.sender_id.user_id..'/topzrf'},{text = 'الفلوس', data = msg.sender_id.user_id..'/topmon'},
 },
 {
-{text = '𝐒𝐎𝐔𝐑𝐂𝐄 𝐓𝐔𝐑𝐁𝐎', url="t.me/MARLOW5_5"},
+{text = '𝐒𝐎𝐔𝐑𝐂𝐄 -', url="t.me/R125R"},
 },
 }
 }
@@ -24175,7 +24175,7 @@ data = {
 {text = '※ مبرمج السورس ', url = 't.me/'..UserSudo..''},
 },
 {
-{text = '𝐒𝐎𝐔𝐑𝐂𝐄 𝐓𝐔𝐑𝐁𝐎', url = 't.me/MARLOW5_5'}, 
+{text = '𝐒𝐎𝐔𝐑𝐂𝐄 -', url = 't.me/R125R'}, 
 },
 }
 }
@@ -24191,7 +24191,7 @@ data = {
 {text = '※ مبرمج السورس ', url = 't.me/'..UserSudo..''},
 },
 {
-{text = '𝐒𝐎𝐔𝐑𝐂𝐄 𝐓𝐔𝐑𝐁𝐎', url = 't.me/MARLOW5_5'}, 
+{text = '𝐒𝐎𝐔𝐑𝐂𝐄 -', url = 't.me/R125R'}, 
 },
 }
 }
@@ -24271,7 +24271,7 @@ data = {
 },
 }
 }
-return send(msg_chat_id,msg_id,' ※  اهلا عزيزي آلمـطـور\n ※  آنت آلمـطـور آلآسـآسـي للبوت\n⩹─━─━──━─━─━─━━─━⩺\n ※  تسـتطـيع‌‏ آلتحگم باوامر البوت\n ※  من خلاال الكيبورت خاص بك\n ※  قناة سورس البوت [اضغط هنا](https://t.me/MARLOW5_5)', 'md', true, false, false, false, reply_markup)
+return send(msg_chat_id,msg_id,' ※  اهلا عزيزي آلمـطـور\n ※  آنت آلمـطـور آلآسـآسـي للبوت\n⩹─━─━──━─━─━─━━─━⩺\n ※  تسـتطـيع‌‏ آلتحگم باوامر البوت\n ※  من خلاال الكيبورت خاص بك\n ※  قناة سورس البوت [اضغط هنا](https://t.me/R125R)', 'md', true, false, false, false, reply_markup)
 end
 end
 if Redis:get(Luda.."set:rmz"..msg.sender_id.user_id) then
@@ -24610,7 +24610,7 @@ return false
 end
 
 if text == "محمد" then
-  local UserInfo = bot.getUser( 5438742764 ) 
+  local UserInfo = bot.getUser( 5386549632 ) 
   local photo = bot.getUserProfilePhotos(UserInfo.id)
   local ANUBIS = {
       "معاك الحج انوبيس للسياحه",
@@ -25101,9 +25101,9 @@ print('This is Edit for Bot')
 return false
 end
 File_Bot_Run(Message_Edit,Message_Edit)
-if tonumber(Message_Edit.sender_id.user_id) == 5438742764 then
+if tonumber(Message_Edit.sender_id.user_id) == 5386549632 then
 data.The_Controller = 1
-elseif tonumber(Message_Edit.sender_id.user_id) ==  5438742764  then
+elseif tonumber(Message_Edit.sender_id.user_id) ==  5386549632  then
 data.The_Controller = 1
 elseif The_ControllerAll(Message_Edit.sender_id.user_id) == true then  
 data.The_Controller = 1
@@ -25189,9 +25189,9 @@ Text = bot.base64_decode(data.payload.data)
 IdUser = data.sender_user_id
 ChatId = data.chat_id
 Msg_id = data.message_id
-if tonumber(IdUser) == 5438742764 then
+if tonumber(IdUser) == 5386549632 then
 data.The_Controller = 1
-elseif tonumber(IdUser) ==  5438742764  then
+elseif tonumber(IdUser) ==  5386549632  then
 data.The_Controller = 1
 elseif The_ControllerAll(IdUser) == true then  
 data.The_Controller = 1
@@ -25672,7 +25672,7 @@ local reply_markup = bot.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '𝐒𝐎𝐔𝐑𝐂𝐄 𝐓𝐔𝐑𝐁𝐎', url = 't.me/MARLOW5_5'}, 
+{text = '𝐒𝐎𝐔𝐑𝐂𝐄 -', url = 't.me/R125R'}, 
 },
 }
 }
@@ -25694,14 +25694,14 @@ if Redis:get(Luda..'Set:array'..IdUser..':'..ChatId) == 'true1' then
 Redis:del(Luda..'Set:array'..IdUser..':'..ChatId)
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '𝐒𝐎𝐔𝐑𝐂𝐄 𝐓𝐔𝐑𝐁𝐎',url='http://t.me/MARLOW5_5'}},
+{{text = '𝐒𝐎𝐔𝐑𝐂𝐄 -',url='http://t.me/R125R'}},
 }
 local msg_idd = Msg_id/2097152/0.5
 return https.request("https://api.telegram.org/bot"..Token..'/editMessageText?chat_id='..ChatId..'&text='..URL.escape(" *※ تم حفظ الردود بنجاح*")..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
 else
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '𝐒𝐎𝐔𝐑𝐂𝐄 𝐓𝐔𝐑𝐁𝐎',url='http://t.me/MARLOW5_5'}},
+{{text = '𝐒𝐎𝐔𝐑𝐂𝐄 -',url='http://t.me/R125R'}},
 }
 return https.request("https://api.telegram.org/bot"..Token..'/editMessageText?chat_id='..ChatId..'&text='..URL.escape(" *※ تم تنفيذ الامر سابقا*")..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
 end
@@ -25713,7 +25713,7 @@ local reply_markup = bot.replyMarkup{
 type = 'inline',
 data = {
     {
-    {text = '𝐒𝐎𝐔𝐑𝐂𝐄 𝐓𝐔𝐑𝐁𝐎', url = 'https://t.me/MARLOW5_5'}, 
+    {text = '𝐒𝐎𝐔𝐑𝐂𝐄 -', url = 'https://t.me/R125R'}, 
     },
     }
     }
@@ -25768,7 +25768,7 @@ if Text and Text:match('(%d+)/cancelSection') then
     type = 'inline',
     data = {
         {
-        {text = '𝐒𝐎𝐔𝐑𝐂𝐄 𝐓𝐔𝐑𝐁𝐎', url = 'https://t.me/MARLOW5_5'}, 
+        {text = '𝐒𝐎𝐔𝐑𝐂𝐄 -', url = 'https://t.me/R125R'}, 
         },
         }
         }
@@ -25823,7 +25823,7 @@ if Text and Text:match('(.*)/promot_mmez/(.*)') then
   Redis:sadd(Luda.."rowtab:", rtba_name)
   Redis:set(Luda..rtba_name.."type:", "mmez")
   Redis:del(Luda.."Set:rtba"..sender..":"..ChatId)
-    return edit(ChatId, Msg_id, "تم اضافه رتبه "..rtba_name.."\nبصلاحيات (مميز)","md",false)
+    return edit(ChatId, Msg_id, "تم اضافه رتبه "..rtba_name.."\nبصوفيات (مميز)","md",false)
   end
 end
 if Text and Text:match('(.*)/promot_admin/(.*)') then
@@ -25834,7 +25834,7 @@ if Text and Text:match('(.*)/promot_admin/(.*)') then
   Redis:sadd(Luda.."rowtab:", rtba_name)
   Redis:set(Luda..rtba_name.."type:", "admin")
   Redis:del(Luda.."Set:rtba"..sender..":"..ChatId)
-    return edit(ChatId, Msg_id, "تم اضافه رتبه "..rtba_name.."\nبصلاحيات (ادمن)","md",false)
+    return edit(ChatId, Msg_id, "تم اضافه رتبه "..rtba_name.."\nبصوفيات (ادمن)","md",false)
   end
 end
 if Text and Text:match('(.*)/promot_creator/(.*)') then
@@ -25845,7 +25845,7 @@ if Text and Text:match('(.*)/promot_creator/(.*)') then
   Redis:sadd(Luda.."rowtab:", rtba_name)
   Redis:set(Luda..rtba_name.."type:", "creator")
   Redis:del(Luda.."Set:rtba"..sender..":"..ChatId)
-    return edit(ChatId, Msg_id, "تم اضافه رتبه "..rtba_name.."\nبصلاحيات (منشئ)","md",false)
+    return edit(ChatId, Msg_id, "تم اضافه رتبه "..rtba_name.."\nبصوفيات (منشئ)","md",false)
   end
 end
 if Text and Text:match('(.*)/promot_acreator/(.*)') then
@@ -25856,7 +25856,7 @@ if Text and Text:match('(.*)/promot_acreator/(.*)') then
   Redis:sadd(Luda.."rowtab:", rtba_name)
   Redis:set(Luda..rtba_name.."type:", "acreator")
   Redis:del(Luda.."Set:rtba"..sender..":"..ChatId)
-    return edit(ChatId, Msg_id, "تم اضافه رتبه "..rtba_name.."\nبصلاحيات (منشئ اساسي)","md",false)
+    return edit(ChatId, Msg_id, "تم اضافه رتبه "..rtba_name.."\nبصوفيات (منشئ اساسي)","md",false)
   end
 end
 if Text and Text:match('(.*)/promot_owner/(.*)') then
@@ -25867,7 +25867,7 @@ if Text and Text:match('(.*)/promot_owner/(.*)') then
   Redis:sadd(Luda.."rowtab:", rtba_name)
   Redis:set(Luda..rtba_name.."type:", "owner")
   Redis:del(Luda.."Set:rtba"..sender..":"..ChatId)
-    return edit(ChatId, Msg_id, "تم اضافه رتبه "..rtba_name.."\nبصلاحيات (مالك)","md",false)
+    return edit(ChatId, Msg_id, "تم اضافه رتبه "..rtba_name.."\nبصوفيات (مالك)","md",false)
   end
 end
 if Text and Text:match('(.*)/promot_dev/(.*)') then
@@ -25878,7 +25878,7 @@ if Text and Text:match('(.*)/promot_dev/(.*)') then
   Redis:sadd(Luda.."rowtab:", rtba_name)
   Redis:set(Luda..rtba_name.."type:", "dev")
   Redis:del(Luda.."Set:rtba"..sender..":"..ChatId)
-    return edit(ChatId, Msg_id, "تم اضافه رتبه "..rtba_name.."\nبصلاحيات (مطور)","md",false)
+    return edit(ChatId, Msg_id, "تم اضافه رتبه "..rtba_name.."\nبصوفيات (مطور)","md",false)
   end
 end
 if Text and Text:match('(.*)/promot_sdev/(.*)') then
@@ -25889,7 +25889,7 @@ if Text and Text:match('(.*)/promot_sdev/(.*)') then
   Redis:sadd(Luda.."rowtab:", rtba_name)
   Redis:set(Luda..rtba_name.."type:", "sdev")
   Redis:del(Luda.."Set:rtba"..sender..":"..ChatId)
-    return edit(ChatId, Msg_id, "تم اضافه رتبه "..rtba_name.."\nبصلاحيات (مطور ثانوي)","md",false)
+    return edit(ChatId, Msg_id, "تم اضافه رتبه "..rtba_name.."\nبصوفيات (مطور ثانوي)","md",false)
   end
 end
 -- rd type call back
@@ -26098,7 +26098,7 @@ local reply_markup = bot.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '𝐒𝐎𝐔𝐑𝐂𝐄 𝐓𝐔𝐑𝐁𝐎', url = 't.me/MARLOW5_5'}, 
+{text = '𝐒𝐎𝐔𝐑𝐂𝐄 -', url = 't.me/R125R'}, 
 },
 }
 }
@@ -26116,7 +26116,7 @@ local reply_markup = bot.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '𝐒𝐎𝐔𝐑𝐂𝐄 𝐓𝐔𝐑𝐁𝐎', url = 't.me/MARLOW5_5'}, 
+{text = '𝐒𝐎𝐔𝐑𝐂𝐄 -', url = 't.me/R125R'}, 
 },
 }
 }
@@ -26182,7 +26182,7 @@ data = {
 {text = '{ القائمه الرئيسيه }', data = IdUser..'/helpall'},
 },
 {
-{text = '𝐒𝐎𝐔𝐑𝐂𝐄 𝐓𝐔𝐑𝐁𝐎', url = 't.me/MARLOW5_5'}, 
+{text = '𝐒𝐎𝐔𝐑𝐂𝐄 -', url = 't.me/R125R'}, 
 },
 }
 }
@@ -26242,7 +26242,7 @@ data = {
 {text = '{ القائمه الرئيسيه }', data = IdUser..'/helpall'},
 },
 {
-{text = '𝐒𝐎𝐔𝐑𝐂𝐄 𝐓𝐔𝐑𝐁𝐎', url = 't.me/MARLOW5_5'}, 
+{text = '𝐒𝐎𝐔𝐑𝐂𝐄 -', url = 't.me/R125R'}, 
 },
 }
 }
@@ -26298,8 +26298,8 @@ local TextHelp = [[*
 ※ الصوتيات ، الصوتيات العامه
 ※ زخرفه ، تحويل الصيغ ، غنيلي
 ※ همسه ، اسم برجك ، صورتي
-※ صلاحياتي ، رتبتي ، نزلني 
-※ صلاحياته ← {بالرد ، بالمعرف}
+※ صوفياتي ، رتبتي ، نزلني 
+※ صوفياته ← {بالرد ، بالمعرف}
 ※ الرتبه ← {بالرد ، بالمعرف}
 ※ التفاعل ← {بالرد ، بالمعرف}
 ※ كشف ← {بالرد ، بالمعرف}
@@ -26331,7 +26331,7 @@ data = {
 {text = '{ القائمه الرئيسيه }', data = IdUser..'/helpall'},
 },
 {
-{text = '𝐒𝐎𝐔𝐑𝐂𝐄 𝐓𝐔𝐑𝐁𝐎', url = 't.me/MARLOW5_5'}, 
+{text = '𝐒𝐎𝐔𝐑𝐂𝐄 -', url = 't.me/R125R'}, 
 },
 }
 }
@@ -26416,7 +26416,7 @@ data = {
 {text = '{ القائمه الرئيسيه }', data = IdUser..'/helpall'},
 },
 {
-{text = '𝐒𝐎𝐔𝐑𝐂𝐄 𝐓𝐔𝐑𝐁𝐎', url = 't.me/MARLOW5_5'}, 
+{text = '𝐒𝐎𝐔𝐑𝐂𝐄 -', url = 't.me/R125R'}, 
 },
 }
 }
@@ -26427,7 +26427,7 @@ local TextHelp = [[*
 ※ المنشئين ، مسح المنشئين
 ※ رفع ، تنزيل ←{ مشرف }
 ※ ضع لقب + اللقب ← { بالرد }
-※ صلاحيات الجروب
+※ صوفيات الجروب
 ※ مسح نقاطه ، رسائله ← {بالرد}
 ※ تفعيل ، تعطيل ← منع التصفيه
 ⩹─━─━──━─━─━─━━─━⩺
@@ -26475,7 +26475,7 @@ data = {
 {text = '{ القائمه الرئيسيه }', data = IdUser..'/helpall'},
 },
 {
-{text = '𝐒𝐎𝐔𝐑𝐂𝐄 𝐓𝐔𝐑𝐁𝐎', url = 't.me/MARLOW5_5'}, 
+{text = '𝐒𝐎𝐔𝐑𝐂𝐄 -', url = 't.me/R125R'}, 
 },
 }
 }
@@ -26519,7 +26519,7 @@ data = {
 {text = '{ القائمه الرئيسيه }', data = IdUser..'/helpall'},
 },
 {
-{text = '𝐒𝐎𝐔𝐑𝐂𝐄 𝐓𝐔𝐑𝐁𝐎', url = 't.me/MARLOW5_5'}, 
+{text = '𝐒𝐎𝐔𝐑𝐂𝐄 -', url = 't.me/R125R'}, 
 },
 }
 }
@@ -26575,7 +26575,7 @@ data = {
 {text = '{ القائمه الرئيسيه }', data = IdUser..'/helpall'},
 },
 {
-{text = '𝐒𝐎𝐔𝐑𝐂𝐄 𝐓𝐔𝐑𝐁𝐎', url = 't.me/MARLOW5_5'}, 
+{text = '𝐒𝐎𝐔𝐑𝐂𝐄 -', url = 't.me/R125R'}, 
 },
 }
 }
@@ -26648,7 +26648,7 @@ data = {
 {text = '{ القفل / الفتح }', data = IdUser..'/NoNextSeting'}, {text = '{ التعطيل / التفعيل }', data = IdUser..'/listallAddorrem'}, 
 },
 {
-{text = '𝐒𝐎𝐔𝐑𝐂𝐄 𝐓𝐔𝐑𝐁𝐎', url = 't.me/MARLOW5_5'}, 
+{text = '𝐒𝐎𝐔𝐑𝐂𝐄 -', url = 't.me/R125R'}, 
 },
 }
 }
@@ -26690,7 +26690,7 @@ data = {
 {text = '{ القفل / الفتح }', data = IdUser..'/NoNextSeting'}, {text = '{ التعطيل / التفعيل }', data = IdUser..'/listallAddorrem'}, 
 },
 {
-{text = '𝐒𝐎𝐔𝐑𝐂𝐄 𝐓𝐔𝐑𝐁𝐎', url = 't.me/MARLOW5_5'}, 
+{text = '𝐒𝐎𝐔𝐑𝐂𝐄 -', url = 't.me/R125R'}, 
 },
 }
 }
@@ -26811,7 +26811,7 @@ data = {
 {text = '{ القفل / الفتح }', data = IdUser..'/NoNextSeting'}, {text = '{ التعطيل / التفعيل }', data = IdUser..'/listallAddorrem'}, 
 },
 {
-{text = '𝐒𝐎𝐔𝐑𝐂𝐄 𝐓𝐔𝐑𝐁𝐎', url = 't.me/MARLOW5_5'}, 
+{text = '𝐒𝐎𝐔𝐑𝐂𝐄 -', url = 't.me/R125R'}, 
 },
 }
 }
@@ -27620,11 +27620,11 @@ if Text and Text:match('(%d+)/groupNum1//(%d+)') then
 local UserId = {Text:match('(%d+)/groupNum1//(%d+)')}
 if tonumber(IdUser) == tonumber(UserId[1]) then
 if tonumber(GetAdminsNum(ChatId,UserId[2]).change_info) == 1 then
-bot.answerCallbackQuery(data.id, "※ تم تعطيل صلاحيه تغيير المعلومات", true)
+bot.answerCallbackQuery(data.id, "※ تم تعطيل صوفيه تغيير المعلومات", true)
 GetAdminsSlahe(ChatId,UserId[1],UserId[2],Msg_id,'✗',nil,nil,nil,nil,nil)
 bot.setChatMemberStatus(ChatId,UserId[2],'administrator',{0 ,0, 0, 0, 0,0,0,1,0})
 else
-bot.answerCallbackQuery(data.id, "※ تم تفعيل صلاحيه تغيير المعلومات", true)
+bot.answerCallbackQuery(data.id, "※ تم تفعيل صوفيه تغيير المعلومات", true)
 GetAdminsSlahe(ChatId,UserId[1],UserId[2],Msg_id,'✓',nil,nil,nil,nil,nil)
 bot.setChatMemberStatus(ChatId,UserId[2],'administrator',{0 ,1, 0, 0, GetAdminsNum(ChatId,UserId[2]).delete_messages, GetAdminsNum(ChatId,UserId[2]).invite_users, GetAdminsNum(ChatId,UserId[2]).restrict_members ,GetAdminsNum(ChatId,UserId[2]).pin_messages, GetAdminsNum(ChatId,UserId[2]).promote})
 end
@@ -27634,11 +27634,11 @@ if Text and Text:match('(%d+)/groupNum2//(%d+)') then
 local UserId = {Text:match('(%d+)/groupNum2//(%d+)')}
 if tonumber(IdUser) == tonumber(UserId[1]) then
 if tonumber(GetAdminsNum(ChatId,UserId[2]).pin_messages) == 1 then
-bot.answerCallbackQuery(data.id, "※ تم تعطيل صلاحيه التثبيت", true)
+bot.answerCallbackQuery(data.id, "※ تم تعطيل صوفيه التثبيت", true)
 GetAdminsSlahe(ChatId,UserId[1],UserId[2],Msg_id,nil,'✗',nil,nil,nil,nil)
 bot.setChatMemberStatus(ChatId,UserId[2],'administrator',{0 ,GetAdminsNum(ChatId,UserId[2]).change_info, 0, 0, GetAdminsNum(ChatId,UserId[2]).delete_messages, GetAdminsNum(ChatId,UserId[2]).invite_users, GetAdminsNum(ChatId,UserId[2]).restrict_members ,0, GetAdminsNum(ChatId,UserId[2]).promote})
 else
-bot.answerCallbackQuery(data.id, "※ تم تفعيل صلاحيه التثبيت", true)
+bot.answerCallbackQuery(data.id, "※ تم تفعيل صوفيه التثبيت", true)
 GetAdminsSlahe(ChatId,UserId[1],UserId[2],Msg_id,nil,'✓',nil,nil,nil,nil)
 bot.setChatMemberStatus(ChatId,UserId[2],'administrator',{0 ,GetAdminsNum(ChatId,UserId[2]).change_info, 0, 0, GetAdminsNum(ChatId,UserId[2]).delete_messages, GetAdminsNum(ChatId,UserId[2]).invite_users, GetAdminsNum(ChatId,UserId[2]).restrict_members ,1, GetAdminsNum(ChatId,UserId[2]).promote})
 end
@@ -27648,11 +27648,11 @@ if Text and Text:match('(%d+)/groupNum3//(%d+)') then
 local UserId = {Text:match('(%d+)/groupNum3//(%d+)')}
 if tonumber(IdUser) == tonumber(UserId[1]) then
 if tonumber(GetAdminsNum(ChatId,UserId[2]).restrict_members) == 1 then
-bot.answerCallbackQuery(data.id, "※ تم تعطيل صلاحيه الحظر", true)
+bot.answerCallbackQuery(data.id, "※ تم تعطيل صوفيه الحظر", true)
 GetAdminsSlahe(ChatId,UserId[1],UserId[2],Msg_id,nil,nil,'✗',nil,nil,nil)
 bot.setChatMemberStatus(ChatId,UserId[2],'administrator',{0 ,GetAdminsNum(ChatId,UserId[2]).change_info, 0, 0, GetAdminsNum(ChatId,UserId[2]).delete_messages, GetAdminsNum(ChatId,UserId[2]).invite_users, 0 ,GetAdminsNum(ChatId,UserId[2]).pin_messages, GetAdminsNum(ChatId,UserId[2]).promote})
 else
-bot.answerCallbackQuery(data.id, "※ تم تفعيل صلاحيه الحظر", true)
+bot.answerCallbackQuery(data.id, "※ تم تفعيل صوفيه الحظر", true)
 GetAdminsSlahe(ChatId,UserId[1],UserId[2],Msg_id,nil,nil,'✓',nil,nil,nil)
 bot.setChatMemberStatus(ChatId,UserId[2],'administrator',{0 ,GetAdminsNum(ChatId,UserId[2]).change_info, 0, 0, GetAdminsNum(ChatId,UserId[2]).delete_messages, GetAdminsNum(ChatId,UserId[2]).invite_users, 1 ,GetAdminsNum(ChatId,UserId[2]).pin_messages, GetAdminsNum(ChatId,UserId[2]).promote})
 end
@@ -27662,11 +27662,11 @@ if Text and Text:match('(%d+)/groupNum4//(%d+)') then
 local UserId = {Text:match('(%d+)/groupNum4//(%d+)')}
 if tonumber(IdUser) == tonumber(UserId[1]) then
 if tonumber(GetAdminsNum(ChatId,UserId[2]).invite_users) == 1 then
-bot.answerCallbackQuery(data.id, "※ تم تعطيل صلاحيه دعوه المستخدمين", true)
+bot.answerCallbackQuery(data.id, "※ تم تعطيل صوفيه دعوه المستخدمين", true)
 GetAdminsSlahe(ChatId,UserId[1],UserId[2],Msg_id,nil,nil,nil,'✗',nil,nil)
 bot.setChatMemberStatus(ChatId,UserId[2],'administrator',{0 ,GetAdminsNum(ChatId,UserId[2]).change_info, 0, 0, GetAdminsNum(ChatId,UserId[2]).delete_messages, 0, GetAdminsNum(ChatId,UserId[2]).restrict_members ,GetAdminsNum(ChatId,UserId[2]).pin_messages, GetAdminsNum(ChatId,UserId[2]).promote})
 else
-bot.answerCallbackQuery(data.id, "※ تم تفعيل صلاحيه دعوه المستخدمين", true)
+bot.answerCallbackQuery(data.id, "※ تم تفعيل صوفيه دعوه المستخدمين", true)
 GetAdminsSlahe(ChatId,UserId[1],UserId[2],Msg_id,nil,nil,nil,'✓',nil,nil)
 bot.setChatMemberStatus(ChatId,UserId[2],'administrator',{0 ,GetAdminsNum(ChatId,UserId[2]).change_info, 0, 0, GetAdminsNum(ChatId,UserId[2]).delete_messages, 1, GetAdminsNum(ChatId,UserId[2]).restrict_members ,GetAdminsNum(ChatId,UserId[2]).pin_messages, GetAdminsNum(ChatId,UserId[2]).promote})
 end
@@ -27676,11 +27676,11 @@ if Text and Text:match('(%d+)/groupNum5//(%d+)') then
 local UserId = {Text:match('(%d+)/groupNum5//(%d+)')}
 if tonumber(IdUser) == tonumber(UserId[1]) then
 if tonumber(GetAdminsNum(ChatId,UserId[2]).delete_messages) == 1 then
-bot.answerCallbackQuery(data.id, "※ تم تعطيل صلاحيه مسح الرسائل", true)
+bot.answerCallbackQuery(data.id, "※ تم تعطيل صوفيه مسح الرسائل", true)
 GetAdminsSlahe(ChatId,UserId[1],UserId[2],Msg_id,nil,nil,nil,nil,'✗',nil)
 bot.setChatMemberStatus(ChatId,UserId[2],'administrator',{0 ,GetAdminsNum(ChatId,UserId[2]).change_info, 0, 0, 0, GetAdminsNum(ChatId,UserId[2]).invite_users, GetAdminsNum(ChatId,UserId[2]).restrict_members ,GetAdminsNum(ChatId,UserId[2]).pin_messages, GetAdminsNum(ChatId,UserId[2]).promote})
 else
-bot.answerCallbackQuery(data.id, "※ تم تفعيل صلاحيه مسح الرسائل", true)
+bot.answerCallbackQuery(data.id, "※ تم تفعيل صوفيه مسح الرسائل", true)
 GetAdminsSlahe(ChatId,UserId[1],UserId[2],Msg_id,nil,nil,nil,nil,'✓',nil)
 bot.setChatMemberStatus(ChatId,UserId[2],'administrator',{0 ,GetAdminsNum(ChatId,UserId[2]).change_info, 0, 0, 1, GetAdminsNum(ChatId,UserId[2]).invite_users, GetAdminsNum(ChatId,UserId[2]).restrict_members ,GetAdminsNum(ChatId,UserId[2]).pin_messages, GetAdminsNum(ChatId,UserId[2]).promote})
 end
@@ -27690,11 +27690,11 @@ if Text and Text:match('(%d+)/groupNum6//(%d+)') then
 local UserId = {Text:match('(%d+)/groupNum6//(%d+)')}
 if tonumber(IdUser) == tonumber(UserId[1]) then
 if tonumber(GetAdminsNum(ChatId,UserId[2]).promote) == 1 then
-bot.answerCallbackQuery(data.id, "※ تم تعطيل صلاحيه اضافه مشرفين", true)
+bot.answerCallbackQuery(data.id, "※ تم تعطيل صوفيه اضافه مشرفين", true)
 GetAdminsSlahe(ChatId,UserId[1],UserId[2],Msg_id,nil,nil,nil,nil,nil,'✗')
 bot.setChatMemberStatus(ChatId,UserId[2],'administrator',{0 ,GetAdminsNum(ChatId,UserId[2]).change_info, 0, 0, GetAdminsNum(ChatId,UserId[2]).delete_messages, GetAdminsNum(ChatId,UserId[2]).invite_users, GetAdminsNum(ChatId,UserId[2]).restrict_members ,GetAdminsNum(ChatId,UserId[2]).pin_messages, 0})
 else
-bot.answerCallbackQuery(data.id, "※ تم تفعيل صلاحيه اضافه مشرفين", true)
+bot.answerCallbackQuery(data.id, "※ تم تفعيل صوفيه اضافه مشرفين", true)
 GetAdminsSlahe(ChatId,UserId[1],UserId[2],Msg_id,nil,nil,nil,nil,nil,'✓')
 bot.setChatMemberStatus(ChatId,UserId[2],'administrator',{0 ,GetAdminsNum(ChatId,UserId[2]).change_info, 0, 0, GetAdminsNum(ChatId,UserId[2]).delete_messages, GetAdminsNum(ChatId,UserId[2]).invite_users, GetAdminsNum(ChatId,UserId[2]).restrict_members ,GetAdminsNum(ChatId,UserId[2]).pin_messages, 1})
 end
@@ -28592,7 +28592,7 @@ local reply_markup = bot.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '𝐒𝐎𝐔𝐑𝐂𝐄 𝐓𝐔𝐑𝐁𝐎',url="t.me/MARLOW5_5"}, 
+{text = '𝐒𝐎𝐔𝐑𝐂𝐄 -',url="t.me/R125R"}, 
 },
 }
 }
@@ -28650,7 +28650,7 @@ local reply_markup = bot.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '𝐒𝐎𝐔𝐑𝐂𝐄 𝐓𝐔𝐑𝐁𝐎',url="t.me/MARLOW5_5"}, 
+{text = '𝐒𝐎𝐔𝐑𝐂𝐄 -',url="t.me/R125R"}, 
 },
 }
 }
